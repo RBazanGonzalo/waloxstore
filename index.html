@@ -7,25 +7,78 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>🚀 Bienvenido a WALOX Store</h1>
-    <nav>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">🟧 WALOX <span>STORE</span></div>
+    <nav class="nav">
       <a href="#">Inicio</a>
       <a href="#">Productos</a>
+      <a href="#">Ofertas</a>
       <a href="#">Contacto</a>
     </nav>
+    <div class="icons">
+      <a href="#" class="cart">🛒</a>
+    </div>
   </header>
 
+  <!-- Hero principal -->
   <section class="hero">
-    <h2>Tu tienda online oficial</h2>
-    <p>Próximamente los mejores productos al mejor precio 🔥</p>
-    <button>Ver catálogo</button>
+    <div class="hero-text">
+      <h1>🚀 Bienvenido a <span>WALOX STORE</span></h1>
+      <p>Tu tienda online oficial con los mejores productos al mejor precio 🔥</p>
+      <button class="btn">Ver catálogo</button>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 WALOX Store | Todos los derechos reservados</p>
-  </footer>
+  <!-- Productos destacados -->
+  <section class="productos">
+    <h2>⭐ Productos Destacados</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="img/Alfombra Grande.jpeg" alt="Producto 1">
+        <h3>Alfombras para Sala</h3>
+        <p>$119.00</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+      <div class="card">
+        <img src="img/zapatillas Deportivas.jpg" alt="Producto 2">
+        <h3>Zapatilla Deportiva</h3>
+        <p>$119.00</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+      <div class="card">
+        <img src="img/MaletinDeGimnasio.jpg" alt="Producto 3">
+        <h3>Maletin de Gimnasio</h3>
+        <p>$79.00</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+      <div class="card">
+        <img src="img/zapatillasUrbanas.jpg" alt="Producto 3">
+        <h3>Maletin de Gimnasio</h3>
+        <p>$79.00</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+    </div>
+  </section>
 
+  <!-- Footer -->
+    <footer class="footer">
+    <p>© 2025 WALOX Store | Todos los derechos reservados</p>
+    <div class="socials">
+      <a href="https://www.facebook.com/profile.php?id=61573525617136" target="_blank">🌐 Facebook</a>
+    </div>
+  </footer>
+<!-- Modal del carrito -->
+<div id="cartModal" class="cart-modal">
+  <div class="cart-modal-content">
+    <h2>🛒 Tu Carrito</h2>
+    <ul id="cartItems"></ul>
+    <button id="closeCart" class="close-btn">Cerrar</button>
+  </div>
+</div>
+  <!-- Aquí enlazas el JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
+
+
