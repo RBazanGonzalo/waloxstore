@@ -12,14 +12,37 @@ body {
   line-height: 1.6;
 }
 
+/* --- BARRA SUPERIOR TIPO TEMU --- */
+.top-bar {
+  width: 100%;
+  background-color: #ff6f00; /* color naranja como Temu */
+  color: white;
+  padding: 6px 0;            /* altura equilibrada */
+  font-size: 14px;           /* tamaño de texto */
+  font-weight: bold;
+}
+
+.top-bar-wrapper {
+  display: flex;
+  justify-content: space-around; /* reparte los textos */
+  align-items: center; 
+  flex-wrap: wrap;              /* para que no se rompa en pantallas chicas */
+  max-width: 1200px;            /* ancho máximo centrado */
+  margin: 0 auto;
+}
+
+.top-bar-wrapper span {
+  margin: 0 15px;
+}
+
 /* Header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 50px;
-  background: #111;
-  color: #fff;
+  background: #ffffff;
+  color: #ffffff;
 }
 
 .logo {
@@ -35,7 +58,7 @@ body {
 .nav a {
   margin: 0 15px;
   text-decoration: none;
-  color: #fff;
+  color: #000000;
   font-weight: 500;
   transition: color 0.3s;
 }
@@ -90,8 +113,9 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(5, 1fr); /* 5 columnas fijas */
   gap: 20px;
+  padding: 20px;
 }
 
 .card {
@@ -133,15 +157,34 @@ body {
 .footer {
   background: #111;
   color: #fff;
-  padding: 20px;
   text-align: center;
+  padding: 20px 10px;
+  margin-top: 40px;
+}
+
+.footer p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.footer .socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 .footer .socials a {
-  color: #ff6600;
-  margin-left: 10px;
+  font-size: 22px;
+  color: #fff;
   text-decoration: none;
+  transition: 0.3s ease;
 }
+
+.footer .socials a:hover {
+  color: #ff0000; /* Rojo estilo WALOX */
+  transform: scale(1.2);
+}
+
 /* --- MENÚ RESPONSIVE --- */
 .menu-btn {
   display: none;
@@ -152,7 +195,23 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 1200px) {
+  .productos .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .productos .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  .productos .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .nav {
     display: none;
     flex-direction: column;
@@ -173,6 +232,13 @@ body {
     display: block;
   }
 }
+
+@media (max-width: 480px) {
+  .productos .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* --- CARRITO --- */
 .cart {
   position: relative;
@@ -191,12 +257,6 @@ body {
   padding: 2px 6px;
   border-radius: 50%;
   font-weight: bold;
-}
-.productos .grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* ✅ 5 columnas fijas */
-  gap: 20px;
-  padding: 20px;
 }
 
 /* --- MODAL DEL CARRITO --- */
@@ -247,27 +307,291 @@ body {
   cursor: pointer;
   border-radius: 5px;
 }
-@media (max-width: 1200px) {
-  .productos .grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+
+/* --- BOTÓN FLOTANTE WHATSAPP --- */
+.whatsapp-float {
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366; /* color verde del botón */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.18);
+  z-index: 1000;
+  transition: transform 0.18s ease;
+  text-decoration: none;
+  border: none;
+  outline: none;
 }
 
-@media (max-width: 992px) {
-  .productos .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.whatsapp-float:hover {
+  transform: scale(1.08);
 }
 
-@media (max-width: 768px) {
-  .productos .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.whatsapp-float svg {
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translateY(-2px); 
+  pointer-events: none;
+}
+
+.whatsapp-float:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37,211,102,0.12);
 }
 
 @media (max-width: 480px) {
-  .productos .grid {
-    grid-template-columns: 1fr;
+  .whatsapp-float {
+    width: 56px;
+    height: 56px;
+    bottom: 14px;
+    right: 14px;
+  }
+  .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+    transform: translateY(0.5px);
   }
 }
 
+/* --- LOGO --- */
+.logo img {
+  height: 60px;       /* tamaño del logo */
+  width: auto;        /* mantiene proporción */
+  display: block;
+  border-radius: 15px; /* redondea las esquinas */
+}
+.top-bar {
+  width: 100%;
+  background-color: #ff6f00;
+  color: white;
+  padding: 6px 0;
+  font-size: 14px;
+  font-weight: bold;
+  overflow: hidden; /* oculta lo que sobresalga */
+  position: relative;
+}
+
+.top-bar-wrapper {
+  display: inline-block;
+  white-space: nowrap; /* evita que los textos salten de línea */
+  animation: scroll-left 15s linear infinite; /* movimiento infinito */
+}
+
+.top-bar-wrapper span {
+  margin: 0 40px; /* espacio entre mensajes */
+  display: inline-block;
+}
+
+/* Animación */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%); /* empieza fuera a la derecha */
+  }
+  100% {
+    transform: translateX(-100%); /* termina fuera a la izquierda */
+  }
+}
+.top-bar {
+  width: 100%;
+  background-color: #000000;
+  color: white;
+  padding: 16px 0;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.top-left, .top-right {
+  flex: 0 0 auto;
+  padding: 0 15px;
+}
+
+.top-center {
+  flex: 1 1 auto;
+  overflow: hidden;
+  height: 20px; /* altura de una línea */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor animado */
+.marquee-vertical {
+  display: flex;
+  flex-direction: column;
+  animation: scroll-vertical 6s linear infinite;
+}
+
+.marquee-item {
+  height: 20px; /* misma altura que top-center */
+  line-height: 20px;
+  text-align: center;
+}
+
+/* Animación: sube uno por uno */
+@keyframes scroll-vertical {
+  0%, 20% { transform: translateY(0); }
+  25%, 45% { transform: translateY(-20px); }
+  50%, 70% { transform: translateY(-40px); }
+  75%, 95% { transform: translateY(-60px); }
+  100% { transform: translateY(0); }
+}
+/* --- BUSCADOR --- */
+.search-bar {
+  flex: 1;
+  max-width: 500px;  /* límite para que no se haga gigante */
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-bar button {
+  padding: 8px 15px;
+  border: none;
+  background: #ff6600;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0 20px 20px 0;
+  transition: background 0.3s;
+}
+
+.search-bar button:hover {
+  background: #e65500;
+}
+.icons a {
+  text-decoration: none;
+  color: #111;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.icons a:hover {
+  color: #e60023; /* Rojo estilo Temu */
+}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* espacio entre ayuda y carrito */
+}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* espacio entre ayuda y carrito */
+}
+
+.icons a {
+  display: flex;
+  align-items: center;
+  color: #111; /* color del icono */
+  text-decoration: none;
+}
+
+.icons a svg {
+  width: 24px;
+  height: 24px;
+  fill: #111; /* color inicial */
+  transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.icons a svg:hover {
+  transform: scale(1.2);
+  fill: #ff6600; /* cambia a naranja en hover */
+}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* espacio entre ayuda y carrito */
+}
+
+.icons a {
+  display: flex;
+  align-items: center;
+  color: #111; /* color del icono */
+  text-decoration: none;
+}
+
+.icons a svg {
+  width: 24px;
+  height: 24px;
+  fill: #111; /* color inicial */
+  transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.icons a svg:hover {
+  transform: scale(1.2);
+  fill: #ff6600; /* cambia a naranja en hover */
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  padding: 5px 10px;
+  background: #fff;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.search-btn:hover {
+  transform: scale(1.1);
+  color: #ff6600; /* color destacado al pasar mouse */
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 2px solid #000000;
+  border-radius: 25px;
+  padding: 5px 15px;
+  background: #fff;
+  width: 350px;   /* 🔹 aquí controlas lo largo */
+  max-width: 100%;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+}
+.nav a i {
+  margin-right: 8px;   /* separa el ícono del texto */
+  color: #000000;      /* color naranja de tu marca */
+  font-size: 1rem;     /* tamaño del icono */
+  vertical-align: middle;
+}

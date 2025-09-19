@@ -5,26 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WALOX Store</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="icons" href="icons/favicon-32x32-WALOX.png">
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">🟧 WALOX <span>STORE</span></div>
-    <nav class="nav">
-      <a href="#">Inicio</a>
-      <a href="#">Productos</a>
-      <a href="#">Ofertas</a>
-      <a href="#">Contacto</a>
-    </nav>
-    <div class="icons">
-      <a href="#" class="cart">🛒</a>
+  <!-- Barra superior tipo Temu -->
+  <div class="top-bar">
+  <div class="top-left">
+    <span>🚚 Envío gratis</span>
+  </div>
+
+  <div class="top-center">
+    <div class="marquee-vertical">
+      <div class="marquee-item">✨ Especial para ti</div>
+      <div class="marquee-item">✅ Entrega garantizada</div>
+      <div class="marquee-item">🔄 Devoluciones hasta 90 días</div>
     </div>
-  </header>
+  </div>
+
+  <div class="top-right">
+    <span>📲 Descarga la app de WALOX</span>
+  </div>
+</div>
+  <!-- Header -->
+<header class="header">
+  <a href="index.html" class="logo">
+    <img src="icons/Walox-logo.png" alt="WALOX Logo">
+  </a>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <nav class="nav">
+    <a href="#"><i class="fas fa-thumbs-up"></i> Artículos más vendidos</a>
+    <a href="#">Inicio</a>
+    <a href="#">Productos</a>
+    <a href="#">Ofertas</a>
+    <a href="#">Contacto</a>
+  </nav>
+
+  <!-- Buscador -->
+ <div class="search-box">
+  <input type="text" placeholder="Buscar productos...">
+  <button class="search-btn">
+    <!-- Icono lupa -->
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         fill="none" viewBox="0 0 24 24" 
+         stroke="currentColor" width="20" height="20">
+      <path stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+    </svg>
+  </button>
+</div>
+
+<div class="icons">
+  <!-- Ayuda -->
+  <a href="#" class="help" aria-label="Ayuda">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 
+      10 10 10-4.5 10-10S17.5 2 12 
+      2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 
+      8-8 8 3.6 8 8-3.6 8-8 
+      8zm-1-5h2v2h-2v-2zm2.1-7.8c-.9-.6-2.1-.8-3.1-.4-.7.3-1.4.9-1.6 
+      1.7-.2.6.3 1.2.9 1.2.4 
+      0 .8-.3.9-.6.1-.3.3-.5.6-.6.3-.1.7-.1.9.1.3.2.4.5.4.9 
+      0 .6-.5 1-1 1h-1c-.6 0-1 
+      .5-1 1v2h2v-1c1.1 0 2-.9 
+      2-2 0-.7-.3-1.3-.9-1.7z"/>
+    </svg>
+  </a>
+
+  <!-- Carrito -->
+  <a href="#" class="cart" aria-label="Carrito">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M7 18c-1.1 0-1.99.9-1.99 
+      2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 
+      0c-1.1 0-1.99.9-1.99 
+      2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.2 
+      14l.8-2h9c.7 0 1.4-.4 1.7-1l3.6-6.5A1 
+      1 0 0 0 21.5 3H5.2L4.3 1H1v2h2l3.6 
+      7.6-1.3 2.4C4.5 14.4 5.5 
+      16 7 16h12v-2H7.4c-.1 
+      0-.3-.1-.3-.3v-.1z"/>
+    </svg>
+  </a>
+</div>
+
+</header>
 
   <!-- Hero principal -->
   <section class="hero">
     <div class="hero-text">
-      <h1>🚀 Bienvenido a <span>WALOX STORE</span></h1>
+      <h1> Bienvenido a <span>WALOX</span></h1>
       <p>Tu tienda online oficial con los mejores productos al mejor precio 🔥</p>
       <button class="btn">Ver catálogo</button>
     </div>
@@ -32,7 +106,7 @@
 
   <!-- Productos destacados -->
   <section class="productos">
-    <h2>⭐ Productos Destacados</h2>
+    <h2> PRODUCTOS DESTACADOS</h2>
     <div class="grid">
       <div class="card">
         <img src="img/Alfombra Grande.jpeg" alt="Producto 1">
@@ -54,7 +128,13 @@
       </div>
       <div class="card">
         <img src="img/zapatillasUrbanas.jpg" alt="Producto 3">
-        <h3>Maletin de Gimnasio</h3>
+        <h3>Zapatillas Urbanas</h3>
+        <p>$119.00</p>
+        <button class="btn">Agregar al carrito</button>
+      </div>
+      <div class="card">
+        <img src="img/zapatillasUrbanas.jpg" alt="Producto 3">
+        <h3></h3>
         <p>$79.00</p>
         <button class="btn">Agregar al carrito</button>
       </div>
@@ -62,23 +142,105 @@
   </section>
 
   <!-- Footer -->
-    <footer class="footer">
-    <p>© 2025 WALOX Store | Todos los derechos reservados</p>
-    <div class="socials">
-      <a href="https://www.facebook.com/profile.php?id=61573525617136" target="_blank">🌐 Facebook</a>
-    </div>
-  </footer>
-<!-- Modal del carrito -->
-<div id="cartModal" class="cart-modal">
-  <div class="cart-modal-content">
-    <h2>🛒 Tu Carrito</h2>
-    <ul id="cartItems"></ul>
-    <button id="closeCart" class="close-btn">Cerrar</button>
+<!-- Footer -->
+<footer class="footer">
+  <p>© 2025 WALOX Store | Todos los derechos reservados</p>
+  <div class="socials">
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/profile.php?id=61573525617136" target="_blank" aria-label="Facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+        <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 
+        1.326 24h11.495v-9.294H9.692v-3.622h3.129V8.413c0-3.1 
+        1.893-4.788 4.659-4.788 1.325 0 2.464.099 
+        2.797.143v3.24l-1.922.001c-1.507 0-1.8.716-1.8 
+        1.765v2.314h3.6l-.468 3.622h-3.132V24h6.142C23.403 
+        24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 
+        0z"/>
+      </svg>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/walox.co/" target="_blank" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+        <path d="M12 2.163c3.204 0 3.584.012 
+        4.85.07 1.366.062 2.633.35 
+        3.608 1.325.975.975 1.262 2.242 
+        1.325 3.608.058 1.266.07 1.646.07 
+        4.85s-.012 3.584-.07 4.85c-.063 
+        1.366-.35 2.633-1.325 3.608-.975.975-2.242 
+        1.262-3.608 1.325-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.063-2.633-.35-3.608-1.325-.975-.975-1.262-2.242-1.325-3.608C2.175 
+        15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.063-1.366.35-2.633 
+        1.325-3.608.975-.975 2.242-1.262 
+        3.608-1.325C8.416 2.175 8.796 2.163 
+        12 2.163zm0 1.622c-3.17 0-3.548.012-4.796.07-1.04.048-1.603.218-1.975.465-.417.27-.714.593-.984 
+        1.01-.247.372-.417.935-.465 1.975-.058 
+        1.248-.07 1.626-.07 4.796s.012 3.548.07 
+        4.796c.048 1.04.218 1.603.465 
+        1.975.27.417.593.714 1.01.984.372.247.935.417 
+        1.975.465 1.248.058 1.626.07 
+        4.796.07s3.548-.012 4.796-.07c1.04-.048 
+        1.603-.218 1.975-.465.417-.27.714-.593.984-1.01.247-.372.417-.935.465-1.975.058-1.248.07-1.626.07-4.796s-.012-3.548-.07-4.796c-.048-1.04-.218-1.603-.465-1.975-.27-.417-.593-.714-1.01-.984-.372-.247-.935-.417-1.975-.465-1.248-.058-1.626-.07-4.796-.07zm0 
+        3.905a5.935 5.935 0 1 1 0 
+        11.87 5.935 5.935 0 0 1 0-11.87zm0 
+        9.793a3.858 3.858 0 1 0 0-7.716 3.858 
+        3.858 0 0 0 0 7.716zm6.406-10.845a1.386 
+        1.386 0 1 1 0-2.772 1.386 
+        1.386 0 0 1 0 2.772z"/>
+      </svg>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@walox.co" target="_blank" aria-label="TikTok">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+        <path d="M12.6 2h3.1c.1 1.1.5 
+        2.1 1.2 2.9.8.9 1.9 1.4 3.1 
+        1.5v3.1c-1.1 0-2.2-.2-3.2-.7v7.1c0 
+        1.5-.5 2.7-1.6 3.7-1.1 1-2.4 
+        1.5-3.9 1.5-1.5 0-2.9-.5-3.9-1.5-1.1-1-1.6-2.2-1.6-3.7 
+        0-1.5.5-2.7 1.6-3.7 1.1-1 2.4-1.5 
+        3.9-1.5.4 0 .7 0 1.1.1V8.1c-.4-.1-.8-.1-1.1-.1-2.1 
+        0-3.9.7-5.4 2.1C5.1 11.5 4.4 
+        13.3 4.4 15.4c0 2.1.7 3.9 2.2 
+        5.3 1.5 1.4 3.3 2.1 5.4 
+        2.1 2.1 0 3.9-.7 5.4-2.1 1.5-1.4 
+        2.2-3.2 2.2-5.3V6.2c-1.1-.1-2.1-.5-3-1.2-.9-.7-1.4-1.7-1.6-3z"/>
+      </svg>
+    </a>
+
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/@Walox-h2l" target="_blank" aria-label="YouTube">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" viewBox="0 0 24 24">
+        <path d="M23.498 6.186a2.97 2.97 0 0 0-2.09-2.103C19.505 
+        3.5 12 3.5 12 3.5s-7.505 0-9.408.583a2.97 
+        2.97 0 0 0-2.09 2.103C0 8.09 0 
+        12 0 12s0 3.91.502 5.814a2.97 2.97 0 
+        0 0 2.09 2.103C4.495 20.5 12 
+        20.5 12 20.5s7.505 0 9.408-.583a2.97 
+        2.97 0 0 0 2.09-2.103C24 15.91 
+        24 12 24 12s0-3.91-.502-5.814zM9.75 
+        15.5v-7l6.5 3.5-6.5 3.5z"/>
+      </svg>
+    </a>
   </div>
-</div>
+</footer>
+
+  <!-- Modal del carrito -->
+  <div id="cartModal" class="cart-modal">
+    <div class="cart-modal-content">
+      <h2>🛒 Tu Carrito</h2>
+      <ul id="cartItems"></ul>
+      <button id="closeCart" class="close-btn">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/51994240571" class="whatsapp-float" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="40" height="40">
+      <path d="M12.04 2C6.5 2 2 6.48 2 12c0 2.1.54 4.1 1.6 5.9L2 22l4.2-1.5C8 21.5 10 22 12 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18c-1.8 0-3.6-.5-5.1-1.5l-.4-.2-2.5.9.9-2.4-.3-.5C4.9 15.2 4.5 13.6 4.5 12c0-4.15 3.35-7.5 7.5-7.5S19.5 7.85 19.5 12s-3.35 7.5-7.5 7.5zm4.4-5.6c-.25-.13-1.5-.74-1.7-.82-.23-.08-.4-.13-.56.13s-.65.82-.8.98c-.15.16-.3.18-.55.06-.25-.13-1.05-.39-2-1.26-.74-.65-1.24-1.45-1.39-1.7-.15-.26-.02-.4.11-.52.11-.11.25-.3.37-.45.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.07-.13-.56-1.34-.77-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.3-.02-.46-.02s-.42.06-.65.3c-.23.25-.86.84-.86 2.05s.88 2.37 1 2.54c.13.16 1.74 2.66 4.22 3.73.59.25 1.05.39 1.4.5.59.19 1.12.16 1.54.1.47-.07 1.5-.61 1.7-1.2.21-.6.21-1.11.15-1.2-.06-.08-.22-.13-.47-.25z"/>
+    </svg>
+  </a>
+
   <!-- Aquí enlazas el JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
-
-
