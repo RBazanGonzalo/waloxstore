@@ -595,3 +595,293 @@ body {
   font-size: 1rem;     /* tamaño del icono */
   vertical-align: middle;
 }
+/* Página de producto */
+.producto-detalle {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.producto-imagen img {
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.producto-info {
+  max-width: 400px;
+}
+
+.producto-info h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.precio {
+  font-size: 1.5rem;
+  color: #e63946;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.descripcion {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+/* Sticky Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  transition: all 0.3s ease;
+  box-shadow: none; /* Inicialmente sin sombra */
+}
+
+/* Estilo cuando el header está en scroll */
+.header.scrolled {
+  padding: 10px 25px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.carousel {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.carousel-images img {
+  display: none;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.carousel-images img.active {
+  display: block;
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.carousel .prev {
+  left: 10px;
+}
+
+.carousel .next {
+  right: 10px;
+}
+
+.carousel button:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+/* Carrusel en card */
+.carousel {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.carousel-images a { display: block; }
+
+.carousel-images img {
+  display: none;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: opacity 0.25s ease;
+}
+
+.carousel-images img.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Flechas */
+.carousel button.prev,
+.carousel button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.45);
+  color: #fff;
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.carousel button.prev { left: 10px; }
+.carousel button.next { right: 10px; }
+
+.carousel button.prev:hover,
+.carousel button.next:hover { background-color: rgba(0,0,0,0.75); }
+
+@media (max-width: 600px) {
+  .carousel button.prev,
+  .carousel button.next { width: 34px; height: 34px; font-size: 18px; }
+}
+/* ==========================
+   Checkout específico
+   ========================== */
+
+.checkout {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.checkout h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #222;
+}
+
+.checkout-cart {
+  margin-bottom: 2rem;
+}
+
+.checkout-cart h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+#checkoutCart {
+  list-style: none;
+  padding: 0;
+}
+
+#checkoutCart li {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ddd;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Formulario */
+.checkout-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.checkout-form input,
+.checkout-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.checkout-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.checkout-form .btn {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.2rem;
+  background: #e60000; /* mismo color principal de botones */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.checkout-form .btn:hover {
+  background: #bf0000;
+}
+
+/* Opciones de pago */
+.pago-opcion {
+  background: #f9f9f9;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.pago-opcion h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.pago-opcion p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+/* Imagen QR centrada */
+.pago-opcion img {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+/* Carrito y top-bar */
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .checkout {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .checkout-form input,
+  .checkout-form textarea,
+  .checkout-form .btn {
+    font-size: 0.95rem;
+  }
+}

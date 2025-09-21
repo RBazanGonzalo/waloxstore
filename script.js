@@ -77,3 +77,59 @@ window.addEventListener("click", (e) => {
     modal.style.display = "none";
   }
 });
+
+// inicializa cada carousel al cargar la página
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.carousel').forEach(carousel => {
+    const slides = carousel.querySelectorAll('.carousel-images img');
+    if (!slides.length) return;
+    if (![...slides].some(s => s.classList.contains('active'))) {
+      slides[0].classList.add('active');
+    }
+  });
+});
+
+function moveSlide(button, direction) {
+  const carousel = button.closest('.carousel');
+  if (!carousel) return;
+  const slides = carousel.querySelectorAll('.carousel-images img');
+  if (!slides.length) return;
+
+  let currentIndex = [...slides].findIndex(s => s.classList.contains('active'));
+  if (currentIndex === -1) currentIndex = 0;
+
+  const nextIndex = (currentIndex + direction + slides.length) % slides.length;
+
+  slides[currentIndex].classList.remove('active');
+  slides[nextIndex].classList.add('active');
+}
+// Carrusel
+function moveSlide(button, direction) {
+  const carousel = button.parentElement;
+  const slides = carousel.querySelectorAll('img');
+  let index = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+
+  slides[index].classList.remove('active');
+  index += direction;
+
+  if (index < 0) index = slides.length - 1;
+  if (index >= slides.length) index = 0;
+
+  slides[index].classList.add('active');
+}
+
+// Función para ir al producto
+function goToProduct(url) {
+  window.location.href = url;
+}
+// --- BOTÓN FINALIZAR COMPRA ---
+const checkoutBtn = modal.querySelector(".checkout-btn");
+
+checkoutBtn.addEventListener("click", () => {
+  // Guardar carrito en localStorage para que se use en checkout.html
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  localStorage.setItem("cartTotal", cartCount);
+
+  // Redirigir al checkout
+  window.location.href = "checkout.html";
+});

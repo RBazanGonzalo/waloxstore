@@ -1,0 +1,218 @@
+<!-- checkout.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar compra - WALOX</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Estilo del carrito */
+    #checkoutCart {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #checkoutCart li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f9f9f9;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    #checkoutCart li button {
+      background: #ff4d4d;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    #checkoutCart li button:hover {
+      background: #e60000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra superior tipo Temu -->
+  <div class="top-bar">
+    <div class="top-left">
+      <span>🚚 Envío gratis</span>
+    </div>
+    <div class="top-center">
+      <div class="marquee-vertical">
+        <div class="marquee-item">✨ Especial para ti</div>
+        <div class="marquee-item">✅ Entrega garantizada</div>
+        <div class="marquee-item">🔄 Devoluciones hasta 90 días</div>
+      </div>
+    </div>
+    <div class="top-right">
+      <span>📲 Descarga la app de WALOX</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="icons/Walox-logo.png" alt="WALOX Logo">
+    </a>
+    <nav class="nav">
+      <a href="index.html">Inicio</a>
+      <a href="#">Productos</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Contacto</a>
+    </nav>
+    <div class="icons">
+      <a href="checkout.html" class="cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Checkout -->
+  <section class="checkout">
+    <h2>Finaliza tu compra</h2>
+
+    <!-- 🛒 Mostrar carrito -->
+    <div class="checkout-cart">
+      <h3>🛒 Tu carrito</h3>
+      <ul id="checkoutCart"></ul>
+    </div>
+
+    <!-- Datos de envío -->
+    <form id="checkoutForm" method="POST" class="checkout-form">
+      <label>Nombre completo</label>
+      <input type="text" name="nombre" required>
+
+      <label>Teléfono</label>
+      <input type="tel" name="telefono" required>
+
+      <label>Dirección de entrega</label>
+      <textarea name="direccion" required></textarea>
+
+      <h3>Método de pago</h3>
+
+      <!-- Pago con Yape -->
+      <div class="pago-opcion">
+        <h4><i class="fas fa-mobile-alt"></i> Yape</h4>
+        <p>Escanea este código QR y adjunta tu comprobante:</p>
+        <img src="icons/yape-qr.png" alt="QR Yape" style="max-width:200px;">
+        <input type="file" name="comprobante">
+      </div>
+
+      <!-- Pago con tarjeta -->
+      <div class="pago-opcion">
+        <h4><i class="fas fa-credit-card"></i> Tarjeta (VISA / Mastercard)</h4>
+        <button id="boton-pagar" type="button" class="btn">Pagar con tarjeta</button>
+      </div>
+
+      <button type="submit" class="btn">✅ Confirmar pedido</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 WALOX Store | Todos los derechos reservados</p>
+    <div class="socials">
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@walox.co" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </footer>
+
+  <!-- SDK de Culqi -->
+  <script src="https://checkout.culqi.com/js/v4"></script>
+
+  <script>
+    // === Mostrar carrito en checkout con botón eliminar ===
+    const cartList = document.getElementById("checkoutCart");
+    let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const cartCounter = document.querySelector(".cart-count");
+
+    function renderCart() {
+      cartList.innerHTML = "";
+      cartCounter.textContent = cartItems.length;
+
+      if (cartItems.length === 0) {
+        cartList.innerHTML = "<li>Tu carrito está vacío.</li>";
+        return;
+      }
+
+      cartItems.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <span>${item.nombre} - ${item.precio}</span>
+          <button onclick="removeItem(${index})"><i class="fas fa-trash"></i> Eliminar</button>
+        `;
+        cartList.appendChild(li);
+      });
+    }
+
+    function removeItem(index) {
+      if(confirm("¿Deseas eliminar este producto del carrito?")) {
+        cartItems.splice(index, 1);
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        renderCart();
+      }
+    }
+
+    renderCart();
+  </script>
+
+  <script>
+    // URL de tu Apps Script
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxeNbbzxMoPtojQtDst9ZHfk2GLBVHxMSMSptALvrBz_dm99uM2PUKGKzOT_xEA2x2L/exec";
+    const form = document.getElementById("checkoutForm");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      formData.append("carrito", JSON.stringify(cartItems)); 
+
+      fetch(scriptURL, { method: "POST", body: formData })
+        .then((response) => {
+          if (response.ok) {
+            alert("✅ Pedido enviado correctamente. Gracias por tu compra.");
+            localStorage.removeItem("cartItems"); 
+            window.location.href = "gracias.html";
+          } else {
+            alert("❌ Hubo un problema al enviar tu pedido.");
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("⚠️ Error de conexión. Inténtalo de nuevo.");
+        });
+    });
+  </script>
+
+  <script>
+    Culqi.publicKey = 'pk_test_tu_clave_publica_aqui'; 
+    document.getElementById('boton-pagar').addEventListener('click', function() {
+      Culqi.options({
+        title: 'WALOX Store',
+        currency: 'PEN',
+        amount: 5000
+      });
+      Culqi.open();
+    });
+  </script>
+
+</body>
+</html>
