@@ -180,7 +180,8 @@
 
   <script>
     // === Envío del pedido a Google Sheets ===
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzDo2kRDdoZHPkAg_0zU5dRP0DS8CnIPogqSVXJIZ5ylbsB7dsAaH030B7cEJQ3goEl/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxEF5l9PTvFxuFpDGmeicJq4M-flzm8g20RaKbhH_3pktLMICPs5amOF4nx0qaPisKu/exec";
+
     const form = document.getElementById("checkoutForm");
 
     form.addEventListener("submit", (e) => {
@@ -195,10 +196,16 @@
       formData.append("carrito", JSON.stringify(cartItems));
 
       fetch(scriptURL, { method: "POST", body: formData })
-        .then(() => {
-          alert("✅ Pedido enviado correctamente. ¡Gracias por tu compra!");
-          localStorage.removeItem("cartItems");
-          window.location.href = "gracias.html";
+        .then((res) => res.text())
+        .then((text) => {
+          console.log("Respuesta del servidor:", text);
+          if (text.includes("OK")) {
+            alert("✅ Pedido enviado correctamente. ¡Gracias por tu compra!");
+            localStorage.removeItem("cartItems");
+            window.location.href = "gracias.html";
+          } else {
+            alert("⚠️ Hubo un problema: " + text);
+          }
         })
         .catch((error) => {
           console.error("Error:", error);
