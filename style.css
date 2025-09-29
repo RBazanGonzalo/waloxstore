@@ -1068,3 +1068,60 @@ body {
     display: flex;
   }
 }
+/* ============================
+   Menú Hamburguesa SOLO en móviles
+   ============================ */
+.hamburger {
+  display: none; /* oculto en escritorio */
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  margin-left: auto;
+}
+
+/* Vista móvil */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* mostrar en móvil */
+  }
+
+  .nav {
+    display: none; /* ocultar menú por defecto */
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  .nav.active {
+    display: flex; /* mostrar cuando se active */
+  }
+
+  .nav a {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav a:last-child {
+    border-bottom: none;
+  }
+
+  /* Ajuste de buscador e íconos en móvil */
+  .search-box {
+    flex: 1;
+    margin: 10px 0;
+    width: 90%;
+  }
+
+  .icons {
+    margin-top: 10px;
+  }
+}
