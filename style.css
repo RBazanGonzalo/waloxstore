@@ -1125,3 +1125,66 @@ body {
     margin-top: 10px;
   }
 }
+/* =============================
+   Ajustes para móviles
+============================= */
+@media (max-width: 768px) {
+
+  /* Hero */
+  .hero {
+    padding: 40px 15px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .hero .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Grid de productos */
+  .grid {
+    grid-template-columns: 1fr !important; /* 1 columna en móvil */
+    gap: 15px;
+  }
+  .card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Header / Menú */
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+  .nav.active {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  /* Dropdown Categorías */
+  .dropdown-categorias {
+    position: static !important;
+    display: none;
+  }
+  .dropdown-wrapper .categorias + .dropdown-categorias {
+    display: none;
+  }
+}
