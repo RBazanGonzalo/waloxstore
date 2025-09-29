@@ -50,7 +50,7 @@
 </head>
 <body>
 
-  <!-- Barra superior tipo Temu -->
+  <!-- Barra superior -->
   <div class="top-bar">
     <div class="top-left">
       <span>🚚 Envío gratis</span>
@@ -90,7 +90,7 @@
   <section class="checkout">
     <h2>Finaliza tu compra</h2>
 
-    <!-- 🛒 Mostrar carrito -->
+    <!-- 🛒 Carrito -->
     <div class="checkout-cart">
       <h3>🛒 Tu carrito</h3>
       <ul id="checkoutCart"></ul>
@@ -113,7 +113,7 @@
       <div class="pago-opcion">
         <h4><i class="fas fa-mobile-alt"></i> Yape</h4>
         <p>Escanea este código QR y adjunta tu comprobante:</p>
-        <img src="icons/yape-qr.png" alt="QR Yape" style="max-width:200px;">
+        <img src="icons/QR-para-pagar.jpeg" alt="QR Yape" style="max-width:200px;">
         <input type="file" name="comprobante">
       </div>
 
@@ -123,7 +123,7 @@
         <button id="boton-pagar" type="button" class="btn">Pagar con tarjeta</button>
       </div>
 
-      <!-- Botón único de confirmación -->
+      <!-- Confirmar pedido -->
       <button type="submit" class="btn">✅ Confirmar pedido</button>
     </form>
   </section>
@@ -139,11 +139,11 @@
     </div>
   </footer>
 
-  <!-- SDK de Culqi -->
+  <!-- SDK Culqi -->
   <script src="https://checkout.culqi.com/js/v4"></script>
 
   <script>
-    // === Mostrar carrito en checkout con botón eliminar ===
+    // === Carrito con opción eliminar ===
     const cartList = document.getElementById("checkoutCart");
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     const cartCounter = document.querySelector(".cart-count");
@@ -179,8 +179,8 @@
   </script>
 
   <script>
-    // === Envío del pedido a Google Sheets ===
-    const scriptURL = "https://script.google.com/macros/s/AKfycbxEF5l9PTvFxuFpDGmeicJq4M-flzm8g20RaKbhH_3pktLMICPs5amOF4nx0qaPisKu/exec";
+    // === Envío de pedido a Google Sheets ===
+    const scriptURL = "https://script.google.com/macros/s/AKfycbycTEQDEEPGs_keRflCEiBRV3xaHMJWHPAIZWMq3HOBcABdwU1GiDlTzL7-fdjcvwPU/exec";
 
     const form = document.getElementById("checkoutForm");
 
@@ -215,7 +215,7 @@
   </script>
 
   <script>
-    // === Pago con tarjeta usando Culqi ===
+    // === Pago con tarjeta (Culqi) ===
     Culqi.publicKey = 'pk_test_tu_clave_publica_aqui';
     document.getElementById('boton-pagar').addEventListener('click', function() {
       Culqi.options({

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Walox Store</title>
+  <title>Walox Store - Ropa</title>
   <link rel="stylesheet" href="style.css">
 
   <!-- Favicon -->
@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* Contador rojo en carrito (pequeño override por si falta en style.css) */
     .cart { position: relative; }
     .cart-count {
       position: absolute;
@@ -30,20 +29,16 @@
       justify-content: center;
       font-weight: bold;
     }
-
-    /* Ajustes rápidos para que el hero y botones se vean bien si falta algo en style.css */
     .hero { text-align:center; padding:60px 20px; background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url('https://via.placeholder.com/1200x500') center/cover no-repeat; color:#fff; }
     .hero .btn { background:#ff6600; color:#fff; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; }
     .btn { cursor:pointer; }
   </style>
 </head>
 <body>
-  
+
   <!-- Barra superior tipo Temu -->
   <div class="top-bar">
-    <div class="top-left">
-      <span>🚚 Envío gratis</span>
-    </div>
+    <div class="top-left"><span>🚚 Envío gratis</span></div>
     <div class="top-center">
       <div class="marquee-vertical">
         <div class="marquee-item">✨ Especial para ti</div>
@@ -51,41 +46,29 @@
         <div class="marquee-item">🔄 Devoluciones hasta 90 días</div>
       </div>
     </div>
-    <div class="top-right">
-      <span>📲 Descarga la app de WALOX</span>
-    </div>
+    <div class="top-right"><span>📲 Descarga la app de WALOX</span></div>
   </div>
 
   <!-- Header -->
   <header class="header">
-    <a href="index.html" class="logo">
-      <img src="icons/Walox-logo.png" alt="WALOX Logo">
-    </a>
+    <a href="index.html" class="logo"><img src="icons/Walox-logo.png" alt="WALOX Logo"></a>
 
-    <!-- Botón hamburguesa (solo visible en móviles) -->
-  <button class="hamburger" id="hamburger">☰</button>
-  
     <nav class="nav">
-  <a href="#"><i class="fas fa-thumbs-up"></i> Artículos más vendidos</a>
-  <a href="#">Inicio</a>
-  <a href="#">Productos</a>
-  <a href="#">Ofertas</a>
-  <a href="#">Contacto</a>
+      <a href="#"><i class="fas fa-thumbs-up"></i> Artículos más vendidos</a>
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="ofertas.html">Ofertas</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="#" class="categorias">Categorías <i class="fas fa-chevron-down"></i></a>
+      <div class="dropdown-categorias">
+        <a href="ropa.html">Ropa</a>
+        <a href="electronica.html">Electrónica</a>
+        <a href="hogar.html">Hogar</a>
+        <a href="juguetes.html">Juguetes</a>
+        <a href="deportes.html">Deportes</a>
+      </div>
+    </nav>
 
-  <!-- Dropdown Categorías -->
-  <div class="dropdown-wrapper">
-    <a href="javascript:void(0);" class="categorias">Categorías <i class="fas fa-chevron-down"></i></a>
-    <div class="dropdown-categorias">
-      <a href="ropa.html">Ropa</a>
-      <a href="electronica.html">Electrónica</a>
-      <a href="hogar.html">Hogar</a>
-      <a href="juguetes.html">Juguetes</a>
-      <a href="deportes.html">Deportes</a>
-    </div>
-  </div>
-</nav>
-
-    <!-- Buscador -->
     <div class="search-box">
       <input type="text" id="searchInput" placeholder="Buscar productos...">
       <button id="searchBtn" class="search-btn" aria-label="Buscar">
@@ -101,7 +84,6 @@
           <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm-1-5h2v2h-2v-2zm2.1-7.8c-.9-.6-2.1-.8-3.1-.4-.7.3-1.4.9-1.6 1.7-.2.6.3 1.2.9 1.2.4 0 .8-.3.9-.6.1-.3.3-.5.6-.6.3-.1.7-.1.9.1.3.2.4.5.4.9 0 .6-.5 1-1 1h-1c-.6 0-1 .5-1 1v2h2v-1c1.1 0 2-.9 2-2 0-.7-.3-1.3-.9-1.7z"/>
         </svg>
       </a>
-
       <a href="checkout.html" class="cart" aria-label="Carrito">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
           <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.2 14l.8-2h9c.7 0 1.4-.4 1.7-1l3.6-6.5A1 1 0 0 0 21.5 3H5.2L4.3 1H1v2h2l3.6 7.6-1.3 2.4C4.5 14.4 5.5 16 7 16h12v-2H7.4c-.1 0-.3-.1-.3-.3v-.1z"/>
@@ -111,69 +93,45 @@
     </div>
   </header>
 
-  <!-- Hero principal -->
+  <!-- Hero de la categoría -->
   <section class="hero" id="top-hero">
     <div class="hero-text">
-      <h1> Bienvenido a <span>WALOX</span></h1>
-      <p>Tu tienda online oficial con los mejores productos al mejor precio 🔥</p>
+      <h1> Descubre nuestra <span>Ropa</span></h1>
+      <p>Las mejores prendas y accesorios al mejor precio 🔥</p>
       <a href="#productosGrid" class="btn">Ver catálogo</a>
     </div>
   </section>
 
-  <!-- Productos destacados -->
+  <!-- Productos de ropa -->
   <section class="productos">
-    <h2> PRODUCTOS DESTACADOS</h2>
+    <h2> ROPA DESTACADA</h2>
     <div class="grid" id="productosGrid">
 
-      <!-- Card con carrusel -->
-      <div class="card" data-nombre="Alfombras para Sala">
-        <div class="carousel">
-          <div class="carousel-images">
-            <img src="img/Alfombra Grande.jpeg" class="active" alt="Alfombra 1" onclick="goToProduct('producto1.html')">
-            <img src="img/Alfombra Grande2.jpeg" alt="Alfombra 2" onclick="goToProduct('producto1.html')">
-            <img src="img/Alfombra Grande3.jpeg" alt="Alfombra 3" onclick="goToProduct('producto1.html')">
-          </div>
-          <button class="prev" onclick="moveSlide(this, -1)">&#10094;</button>
-          <button class="next" onclick="moveSlide(this, 1)">&#10095;</button>
-        </div>
-        <h3>Alfombras para Sala</h3>
-        <p>$119.00</p>
+      <div class="card" data-nombre="Camiseta Deportiva">
+        <img src="img/camiseta.jpg" alt="Camiseta Deportiva">
+        <h3>Camiseta Deportiva</h3>
+        <p>$29.00</p>
         <button class="btn">Agregar al carrito</button>
       </div>
 
-      <!-- Cards normales -->
-      <div class="card" data-nombre="Zapatilla Deportiva">
-        <img src="img/zapatillas Deportivas.jpg" alt="Zapatilla Deportiva">
-        <h3>Zapatilla Deportiva</h3>
-        <p>$119.00</p>
+      <div class="card" data-nombre="Pantalón Casual">
+        <img src="img/pantalon.jpg" alt="Pantalón Casual">
+        <h3>Pantalón Casual</h3>
+        <p>$49.00</p>
         <button class="btn">Agregar al carrito</button>
       </div>
 
-      <div class="card" data-nombre="Maletín de Gimnasio">
-        <img src="img/MaletinDeGimnasio.jpg" alt="Maletín de Gimnasio">
-        <h3>Maletín de Gimnasio</h3>
+      <div class="card" data-nombre="Chaqueta Jeans">
+        <img src="img/chaqueta.jpg" alt="Chaqueta Jeans">
+        <h3>Chaqueta Jeans</h3>
         <p>$79.00</p>
-        <button class="btn">Agregar al carrito</button>
-      </div>
-
-      <div class="card" data-nombre="Zapatillas Urbanas">
-        <img src="img/zapatillasUrbanas.jpg" alt="Zapatillas Urbanas">
-        <h3>Zapatillas Urbanas</h3>
-        <p>$119.00</p>
-        <button class="btn">Agregar al carrito</button>
-      </div>
-
-      <div class="card" data-nombre="Zapatilla Casual">
-        <img src="img/Zapatilla-Casual.png" alt="Zapatilla Casual">
-        <h3>Zapatilla Casual</h3>
-        <p>$119.00</p>
         <button class="btn">Agregar al carrito</button>
       </div>
 
     </div>
   </section>
 
-  <!-- Footer con redes sociales -->
+  <!-- Footer -->
   <footer class="footer">
     <p>© 2025 WALOX Store | Todos los derechos reservados</p>
     <div class="socials">
@@ -184,16 +142,15 @@
     </div>
   </footer>
 
-  <!-- Botón flotante WhatsApp -->
+  <!-- WhatsApp flotante -->
   <a href="https://wa.me/51994240571" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="40" height="40">
       <path d="M12.04 2C6.5 2 2 6.48 2 12c0 2.1.54 4.1 1.6 5.9L2 22l4.2-1.5C8 21.5 10 22 12 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18c-1.8 0-3.6-.5-5.1-1.5l-.4-.2-2.5.9.9-2.4-.3-.5C4.9 15.2 4.5 13.6 4.5 12c0-4.15 3.35-7.5 7.5-7.5S19.5 7.85 19.5 12s-3.35 7.5-7.5 7.5zm4.4-5.6c-.25-.13-1.5-.74-1.7-.82-.23-.08-.4-.13-.56.13s-.65.82-.8.98c-.15.16-.3.18-.55.06-.25-.13-1.05-.39-2-1.26-.74-.65-1.24-1.45-1.39-1.7-.15-.26-.02-.4.11-.52.11-.11.25-.3.37-.45.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.07-.13-.56-1.34-.77-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.3-.02-.46-.02s-.42.06-.65.3c-.23.25-.86.84-.86 2.05s.88 2.37 1 2.54c.13.16 1.74 2.66 4.22 3.73.59.25 1.05.39 1.4.5.59.19 1.12.16 1.54.1.47-.07 1.5-.61 1.7-1.2.21-.6.21-1.11.15-1.2-.06-.08-.22-.13-.47-.25z"/>
     </svg>
   </a>
 
-  <!-- Scripts -->
+  <!-- Scripts (igual que en index.html) -->
   <script>
-    // Carrusel: moveSlide
     function moveSlide(button, direction) {
       const carousel = button.closest('.carousel');
       const images = carousel.querySelectorAll('.carousel-images img');
@@ -205,37 +162,20 @@
       if (next >= images.length) next = 0;
       images[next].classList.add('active');
     }
+    function goToProduct(url) { window.location.href = url; }
 
-    // Ir a producto
-    function goToProduct(url) {
-      window.location.href = url;
-    }
-
-    // ===============================
-    // Carrito con localStorage
-    // ===============================
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     const cartCounter = document.querySelector('.cart-count');
-
-    function updateCartCounter() {
-      cartCounter.textContent = cartItems.length;
-    }
-
-    // inicial
+    function updateCartCounter() { cartCounter.textContent = cartItems.length; }
     updateCartCounter();
-
-    // agregar al carrito
     document.querySelectorAll('.card .btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const card = btn.closest('.card');
         const nombre = card.querySelector("h3").innerText;
         const precio = card.querySelector("p").innerText;
-
         cartItems.push({ nombre, precio });
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
-
         updateCartCounter();
-        // Mensaje corto
         const popup = document.createElement('div');
         popup.style.position = 'fixed';
         popup.style.right = '20px';
@@ -252,14 +192,10 @@
       });
     });
 
-    // ===============================
-    // Buscador funcional
-    // ===============================
     (function() {
       const searchInput = document.getElementById("searchInput");
       const searchBtn = document.getElementById("searchBtn");
       const productos = document.querySelectorAll("#productosGrid .card");
-
       function filtrarProductos() {
         const filtro = searchInput.value.trim().toLowerCase();
         let encontrados = 0;
@@ -268,12 +204,9 @@
           if (filtro === "" || nombre.includes(filtro)) {
             producto.style.display = "";
             encontrados++;
-          } else {
-            producto.style.display = "none";
-          }
+          } else { producto.style.display = "none"; }
         });
         if (filtro !== "" && encontrados === 0) {
-          // Mensaje no encontrado (no intrusivo)
           const nofound = document.createElement('div');
           nofound.style.position = 'fixed';
           nofound.style.left = '50%';
@@ -290,44 +223,10 @@
           setTimeout(() => nofound.remove(), 1800);
         }
       }
-
       searchBtn.addEventListener("click", filtrarProductos);
-      searchInput.addEventListener("keypress", (e) => {
-        if (e.key === "Enter") {
-          e.preventDefault();
-          filtrarProductos();
-        }
-      });
+      searchInput.addEventListener("keypress", (e) => { if (e.key === "Enter") { e.preventDefault(); filtrarProductos(); }});
     })();
   </script>
-
-  <script>
-  document.querySelectorAll('.categorias').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      const dropdown = this.nextElementSibling;
-      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-    });
-  });
-
-  // Cerrar dropdown al hacer clic afuera
-  window.addEventListener('click', function(e) {
-    document.querySelectorAll('.dropdown-categorias').forEach(dd => {
-      if (!dd.parentElement.contains(e.target)) {
-        dd.style.display = 'none';
-      }
-    });
-  });
-</script>
-
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const navMenu = document.querySelector(".nav");
-
-  hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-  });
-</script>
 
 </body>
 </html>

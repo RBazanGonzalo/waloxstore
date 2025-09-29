@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WALOX Store - Electrónica</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Favicon -->
+<link rel="icon" href="icons/favicon-32x32-WALOX.png">
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* Contador carrito */
+.cart { position: relative; }
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Hero */
+.hero {
+  text-align:center; padding:60px 20px;
+  background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+              url('https://via.placeholder.com/1200x500') center/cover no-repeat;
+  color:#fff;
+}
+.hero .btn { background:#ff6600; color:#fff; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; }
+
+/* Dropdown categorías */
+.dropdown-wrapper { position: relative; display: inline-block; }
+.dropdown-categorias {
+  display: none;
+  position: absolute;
+  background: #fff;
+  min-width: 160px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  margin-top: 5px;
+}
+.dropdown-categorias a { display: block; padding: 10px; color: #333; text-decoration: none; }
+.dropdown-categorias a:hover { background-color: #f0f0f0; }
+.dropdown-wrapper:hover .dropdown-categorias { display: block; }
+
+/* WhatsApp flotante */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 30px;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="top-left">🚚 Envío gratis</div>
+  <div class="top-center">
+    <div class="marquee-vertical">
+      <div class="marquee-item">✨ Especial para ti</div>
+      <div class="marquee-item">✅ Entrega garantizada</div>
+      <div class="marquee-item">🔄 Devoluciones hasta 90 días</div>
+    </div>
+  </div>
+  <div class="top-right">📲 Descarga la app de WALOX</div>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <a href="index.html" class="logo">
+    <img src="icons/Walox-logo.png" alt="WALOX Logo">
+  </a>
+
+  <nav class="nav">
+    <a href="#"><i class="fas fa-thumbs-up"></i> Artículos más vendidos</a>
+    <a href="index.html">Inicio</a>
+    <a href="#">Productos</a>
+    <a href="#">Ofertas</a>
+    <a href="#">Contacto</a>
+
+    <!-- Dropdown -->
+    <div class="dropdown-wrapper">
+      <a href="javascript:void(0);" class="categorias">Categorías <i class="fas fa-chevron-down"></i></a>
+      <div class="dropdown-categorias">
+        <a href="ropa.html">Ropa</a>
+        <a href="electronica.html">Electrónica</a>
+        <a href="hogar.html">Hogar</a>
+        <a href="juguetes.html">Juguetes</a>
+        <a href="deportes.html">Deportes</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Buscador -->
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Buscar productos...">
+    <button id="searchBtn" class="search-btn">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+
+  <div class="icons">
+    <a href="#" class="help"><i class="fas fa-question-circle"></i></a>
+    <a href="checkout.html" class="cart">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count">0</span>
+    </a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Electrónica en <span>WALOX</span></h1>
+    <p>Los gadgets y dispositivos más modernos para ti ⚡</p>
+    <a href="#productosGrid" class="btn">Ver productos</a>
+  </div>
+</section>
+
+<!-- Productos -->
+<section class="productos">
+  <h2>PRODUCTOS DESTACADOS - Electrónica</h2>
+  <div class="grid" id="productosGrid">
+    <div class="card" data-nombre="Auriculares Inalámbricos">
+      <img src="img/auriculares.jpg" alt="Auriculares Inalámbricos">
+      <h3>Auriculares Inalámbricos</h3>
+      <p>$49.99</p>
+      <button class="btn">Agregar al carrito</button>
+    </div>
+
+    <div class="card" data-nombre="Smartwatch">
+      <img src="img/smartwatch.jpg" alt="Smartwatch">
+      <h3>Smartwatch</h3>
+      <p>$89.99</p>
+      <button class="btn">Agregar al carrito</button>
+    </div>
+
+    <div class="card" data-nombre="Cámara de Seguridad">
+      <img src="img/camara_seguridad.jpg" alt="Cámara de Seguridad">
+      <h3>Cámara de Seguridad</h3>
+      <p>$129.99</p>
+      <button class="btn">Agregar al carrito</button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>© 2025 WALOX Store | Todos los derechos reservados</p>
+  <div class="socials">
+    <a href="https://www.facebook.com/walox.co" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/walox.co/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@Walox-h2l" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.tiktok.com/@walox.co" target="_blank"><i class="fab fa-tiktok"></i></a>
+  </div>
+</footer>
+
+<!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/51994240571" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="40" height="40">
+      <path d="M12.04 2C6.5 2 2 6.48 2 12c0 2.1.54 4.1 1.6 5.9L2 22l4.2-1.5C8 21.5 10 22 12 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm0 18c-1.8 0-3.6-.5-5.1-1.5l-.4-.2-2.5.9.9-2.4-.3-.5C4.9 15.2 4.5 13.6 4.5 12c0-4.15 3.35-7.5 7.5-7.5S19.5 7.85 19.5 12s-3.35 7.5-7.5 7.5zm4.4-5.6c-.25-.13-1.5-.74-1.7-.82-.23-.08-.4-.13-.56.13s-.65.82-.8.98c-.15.16-.3.18-.55.06-.25-.13-1.05-.39-2-1.26-.74-.65-1.24-1.45-1.39-1.7-.15-.26-.02-.4.11-.52.11-.11.25-.3.37-.45.12-.15.16-.25.25-.42.08-.17.04-.32-.02-.45-.07-.13-.56-1.34-.77-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.3-.02-.46-.02s-.42.06-.65.3c-.23.25-.86.84-.86 2.05s.88 2.37 1 2.54c.13.16 1.74 2.66 4.22 3.73.59.25 1.05.39 1.4.5.59.19 1.12.16 1.54.1.47-.07 1.5-.61 1.7-1.2.21-.6.21-1.11.15-1.2-.06-.08-.22-.13-.47-.25z"/>
+    </svg>
+  </a>
+
+<!-- Scripts -->
+<script>
+// Carrito
+let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+const cartCounter = document.querySelector('.cart-count');
+function updateCartCounter() { cartCounter.textContent = cartItems.length; }
+updateCartCounter();
+
+document.querySelectorAll('.card .btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.card');
+    const nombre = card.querySelector("h3").innerText;
+    const precio = card.querySelector("p").innerText;
+    cartItems.push({ nombre, precio });
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    updateCartCounter();
+    alert(`${nombre} agregado al carrito 🛒`);
+  });
+});
+
+// Buscador
+const searchInput = document.getElementById("searchInput");
+const searchBtn = document.getElementById("searchBtn");
+const productos = document.querySelectorAll("#productosGrid .card");
+
+function filtrarProductos() {
+  const filtro = searchInput.value.trim().toLowerCase();
+  productos.forEach(producto => {
+    const nombre = (producto.dataset.nombre || producto.querySelector('h3').innerText).toLowerCase();
+    producto.style.display = nombre.includes(filtro) || filtro === "" ? "" : "none";
+  });
+}
+searchBtn.addEventListener("click", filtrarProductos);
+searchInput.addEventListener("keypress", (e) => { if (e.key === "Enter") filtrarProductos(); });
+</script>
+
+</body>
+</html>

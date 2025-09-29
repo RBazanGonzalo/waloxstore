@@ -885,3 +885,186 @@ body {
     font-size: 0.95rem;
   }
 }
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav .categorias {
+  margin-left: auto; /* empuja "Categorías" al extremo derecho */
+}
+/* Posicionar el dropdown */
+.nav {
+  position: relative;
+}
+
+.dropdown-categorias {
+  display: none; /* oculto por defecto */
+  position: absolute;
+  top: 100%; /* justo debajo de "Categorías" */
+  right: 0;  /* alinea al extremo derecho */
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px 0;
+  min-width: 150px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.dropdown-categorias a {
+  display: block;
+  padding: 8px 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-categorias a:hover {
+  background: #f2f2f2;
+}
+.nav .categorias:hover + .dropdown-categorias {
+  display: block;
+}
+.nav {
+  position: relative;
+}
+
+.categorias {
+  position: relative;
+}
+
+.dropdown-categorias {
+  display: none;
+  position: absolute;
+  top: 100%; /* justo debajo de Categorías */
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  z-index: 1000;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown-categorias a {
+  display: block;
+  padding: 8px 12px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-categorias a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Mostrar dropdown al hover */
+.categorias:hover + .dropdown-categorias,
+.dropdown-categorias:hover {
+  display: block;
+}
+/* Dropdown categorías */
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-categorias {
+  display: none;
+  position: absolute;
+  background: #fff;
+  min-width: 160px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.dropdown-categorias a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-categorias a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Hover desktop */
+.dropdown-wrapper:hover .dropdown-categorias {
+  display: block;
+}
+/* ====== CONTADOR OFERTA RELÁMPAGO ====== */
+.flash-timer {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-top: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+/* Espaciado entre números y dos puntos */
+.flash-timer span {
+  display: inline-block;
+  min-width: 35px;
+}
+
+/* Animación cuando se está acabando el tiempo */
+.flash-timer.warning {
+  background: #ff0000;
+  animation: blink 0.8s infinite alternate;
+}
+
+@keyframes blink {
+  from { background: #ff0000; color: #fff; }
+  to   { background: #fff; color: #ff0000; }
+}
+/* Móviles muy pequeños (extra pequeño, <=480px) */
+@media (max-width: 480px) {
+  .productos .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+/* ====== HAMBURGUESA SOLO EN MÓVILES ====== */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .nav a {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  .nav a:last-child {
+    border-bottom: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  .nav.active {
+    display: flex;
+  }
+}

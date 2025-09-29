@@ -18,7 +18,7 @@ cartBadge.classList.add("cart-badge");
 cartBadge.innerText = cartCount;
 cartIcon.appendChild(cartBadge);
 
-// Array donde se guardarán los productos
+// Array donde se guardarán los productosw
 let cartItems = [];
 
 // Evento para cada botón "Agregar al carrito"
@@ -89,20 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-function moveSlide(button, direction) {
-  const carousel = button.closest('.carousel');
-  if (!carousel) return;
-  const slides = carousel.querySelectorAll('.carousel-images img');
-  if (!slides.length) return;
 
-  let currentIndex = [...slides].findIndex(s => s.classList.contains('active'));
-  if (currentIndex === -1) currentIndex = 0;
-
-  const nextIndex = (currentIndex + direction + slides.length) % slides.length;
-
-  slides[currentIndex].classList.remove('active');
-  slides[nextIndex].classList.add('active');
-}
 // Carrusel
 function moveSlide(button, direction) {
   const carousel = button.parentElement;
@@ -132,4 +119,10 @@ checkoutBtn.addEventListener("click", () => {
 
   // Redirigir al checkout
   window.location.href = "checkout.html";
+});
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
 });
