@@ -1188,3 +1188,175 @@ body {
     display: none;
   }
 }
+/* === ESTILO GENERAL DE LAS CARDS === */
+.card {
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* === CONTENEDOR DE IMAGENES (normal o carrusel) === */
+.card-image,
+.carousel-images {
+  width: 100%;
+  aspect-ratio: 4 / 5;   /* 🔹 proporción tipo Temu (rectangular, no cuadrada) */
+  overflow: hidden;
+}
+
+/* === IMAGENES DENTRO DE CUALQUIER CARD === */
+.card-image img,
+.carousel-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* llena sin deformar */
+  display: block;
+  border-radius: 0;      /* bordes rectos */
+}
+
+/* === CARRUSEL === */
+.carousel {
+  width: 100%;
+  position: relative;
+}
+
+.carousel-images img {
+  display: none;         /* 🔹 todas ocultas */
+}
+
+.carousel-images img.active {
+  display: block;        /* 🔹 solo la activa se ve */
+}
+
+/* Botones del carrusel */
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.carousel .prev { left: 5px; }
+.carousel .next { right: 5px; }
+/* Para las imágenes normales (estilo Temu) */
+.card-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0; /* cuadrado, sin bordes redondeados */
+}
+
+/* Para el carrusel (no lo forzamos a cuadrado) */
+.card-image-carousel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image-carousel img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+/* Quitar cualquier redondeo en TODAS las cards */
+.card {
+  border-radius: 0 !important;
+  overflow: hidden;
+}
+
+/* Asegurar que el carrusel también sea cuadrado sin bordes redondeados */
+.card-image-carousel,
+.card-image-carousel img,
+.carousel,
+.carousel-images img {
+  border-radius: 0 !important;
+}
+.hero {
+  background: url("img/hero.png") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: white;
+}
+#top-hero {
+  background: url("img/hero.png") no-repeat center center/cover !important;
+}
+.separator {
+  color: #555;
+  margin: 0 10px;
+  align-self: center; /* Siempre centrado verticalmente */
+}
+.producto-detalle {
+  display: grid;
+  grid-template-columns: 45% 1fr 250px; /* Imagen ocupa más espacio */
+  gap: 30px;
+  max-width: 1200px; /* un poco más ancho para que la imagen no se vea comprimida */
+  margin: 40px auto;
+  align-items: flex-start;
+}
+.producto-imagen {
+  justify-self: start; /* Empuja la imagen hacia la izquierda */
+}
+
+.producto-imagen img {
+  width: 100%; /* ocupa todo el espacio asignado */
+  max-width: none; /* elimina la restricción de tamaño anterior */
+  border-radius: 10px;
+}
+.producto-detalle {
+  display: grid !important;
+  grid-template-columns: 1.2fr 1fr 0.8fr !important; /* La columna de la imagen más grande */
+  gap: 30px !important;
+  max-width: 1200px !important; /* Contenedor más amplio */
+  margin: 40px auto !important;
+  align-items: flex-start !important;
+}
+
+.producto-imagen {
+  justify-self: start !important; /* Empuja la imagen hacia la izquierda */
+  margin-left: -20px !important;  /* Opcional: la hace salir un poco del contenedor */
+}
+
+.producto-imagen img {
+  width: 100% !important;   /* Ocupa toda la columna */
+  max-width: 100% !important;
+  height: auto !important;   /* Mantiene proporciones */
+  border-radius: 10px !important;
+  display: block !important;
+}
+.rating {
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  color: #ffbb00; /* Color dorado de estrella */
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.rating i {
+  margin-right: 8px; /* Separación entre estrella y texto */
+  color: #ffbb00;
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.rating:hover i {
+  transform: scale(1.2); /* Efecto hover elegante */
+}

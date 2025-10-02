@@ -39,22 +39,29 @@
 </head>
 <body>
   
-  <!-- Barra superior tipo Temu -->
   <div class="top-bar">
-    <div class="top-left">
-      <span>🚚 Envío gratis</span>
-    </div>
-    <div class="top-center">
-      <div class="marquee-vertical">
-        <div class="marquee-item">✨ Especial para ti</div>
-        <div class="marquee-item">✅ Entrega garantizada</div>
-        <div class="marquee-item">🔄 Devoluciones hasta 90 días</div>
-      </div>
-    </div>
-    <div class="top-right">
-      <span>📲 Descarga la app de WALOX</span>
+  <div class="top-left">
+    <span><i class="fas fa-truck"></i> Envío gratuito</span>
+  </div>
+
+  <div class="separator">|</div>
+
+  <div class="top-center">
+    <div class="marquee-vertical">
+      <div class="marquee-item"><i class="fas fa-star"></i> Ofertas exclusivas para ti</div>
+      <div class="marquee-item"><i class="fas fa-check-circle"></i> Entrega garantizada</div>
+      <div class="marquee-item"><i class="fas fa-rotate"></i> Devoluciones hasta 90 días</div>
     </div>
   </div>
+
+  <div class="separator">|</div>
+
+  <div class="top-right">
+    <span><i class="fas fa-mobile-alt"></i> Descarga nuestra app</span>
+  </div>
+</div>
+
+
 
   <!-- Header -->
   <header class="header">
@@ -67,10 +74,11 @@
   
     <nav class="nav">
   <a href="#"><i class="fas fa-thumbs-up"></i> Artículos más vendidos</a>
-  <a href="#">Inicio</a>
-  <a href="#">Productos</a>
-  <a href="#">Ofertas</a>
-  <a href="#">Contacto</a>
+  <a href="#" class="rating">
+  <i class="fas fa-star"></i> 5 estrellas</a>
+
+  <a href="#">Lo nuevo</a>
+  <a href="registro.html">Registrarse</a> <!-- Nuevo enlace -->
 
   <!-- Dropdown Categorías -->
   <div class="dropdown-wrapper">
@@ -94,13 +102,13 @@
         </svg>
       </button>
     </div>
+    
+     <!-- Botón hamburguesa (solo visible en móviles) -->
+  <button class="hamburger" id="hamburger">☰</button>
 
     <div class="icons">
-      <a href="#" class="help" aria-label="Ayuda" title="Ayuda">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm-1-5h2v2h-2v-2zm2.1-7.8c-.9-.6-2.1-.8-3.1-.4-.7.3-1.4.9-1.6 1.7-.2.6.3 1.2.9 1.2.4 0 .8-.3.9-.6.1-.3.3-.5.6-.6.3-.1.7-.1.9.1.3.2.4.5.4.9 0 .6-.5 1-1 1h-1c-.6 0-1 .5-1 1v2h2v-1c1.1 0 2-.9 2-2 0-.7-.3-1.3-.9-1.7z"/>
-        </svg>
-      </a>
+      <!-- Ayuda -->
+      <a href="#" class="help" aria-label="Ayuda"><i class="fas fa-circle-question"></i></a>
 
       <a href="checkout.html" class="cart" aria-label="Carrito">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -111,66 +119,84 @@
     </div>
   </header>
 
-  <!-- Hero principal -->
-  <section class="hero" id="top-hero">
-    <div class="hero-text">
-      <h1> Bienvenido a <span>WALOX</span></h1>
-      <p>Tu tienda online oficial con los mejores productos al mejor precio 🔥</p>
-      <a href="#productosGrid" class="btn">Ver catálogo</a>
-    </div>
-  </section>
+ <!-- Hero principal -->
+<section class="hero" id="top-hero">
+  <div class="hero-text">
+    <h1>Bienvenido a <span>WALOX</span></h1>
+    <p>Tu tienda online oficial con los mejores productos al mejor precio </p>
+    <a href="#productosGrid" class="btn">Ver catálogo</a>
+  </div>
+</section>
 
   <!-- Productos destacados -->
   <section class="productos">
     <h2> PRODUCTOS DESTACADOS</h2>
     <div class="grid" id="productosGrid">
 
-      <!-- Card con carrusel -->
-      <div class="card" data-nombre="Alfombras para Sala">
-        <div class="carousel">
-          <div class="carousel-images">
-            <img src="img/Alfombra Grande.jpeg" class="active" alt="Alfombra 1" onclick="goToProduct('producto1.html')">
-            <img src="img/Alfombra Grande2.jpeg" alt="Alfombra 2" onclick="goToProduct('producto1.html')">
-            <img src="img/Alfombra Grande3.jpeg" alt="Alfombra 3" onclick="goToProduct('producto1.html')">
-          </div>
-          <button class="prev" onclick="moveSlide(this, -1)">&#10094;</button>
-          <button class="next" onclick="moveSlide(this, 1)">&#10095;</button>
-        </div>
-        <h3>Alfombras para Sala</h3>
-        <p>$119.00</p>
-        <button class="btn">Agregar al carrito</button>
+     <!-- Card con carrusel (no cuadrado forzado, mantiene su tamaño) -->
+<div class="card" data-nombre="Alfombras para Sala">
+  <div class="card-image-carousel">
+    <div class="carousel">
+      <div class="carousel-images">
+        <img src="img/Alfombra Grande.jpeg" class="active" alt="Alfombra 1" onclick="goToProduct('producto1.html')">
+        <img src="img/Alfombra Grande2.jpeg" alt="Alfombra 2" onclick="goToProduct('producto1.html')">
+        <img src="img/Alfombra Grande3.jpeg" alt="Alfombra 3" onclick="goToProduct('producto1.html')">
       </div>
-
-      <!-- Cards normales -->
-      <div class="card" data-nombre="Zapatilla Deportiva">
-        <img src="img/zapatillas Deportivas.jpg" alt="Zapatilla Deportiva">
-        <h3>Zapatilla Deportiva</h3>
-        <p>$119.00</p>
-        <button class="btn">Agregar al carrito</button>
-      </div>
-
-      <div class="card" data-nombre="Maletín de Gimnasio">
-        <img src="img/MaletinDeGimnasio.jpg" alt="Maletín de Gimnasio">
-        <h3>Maletín de Gimnasio</h3>
-        <p>$79.00</p>
-        <button class="btn">Agregar al carrito</button>
-      </div>
-
-      <div class="card" data-nombre="Zapatillas Urbanas">
-        <img src="img/zapatillasUrbanas.jpg" alt="Zapatillas Urbanas">
-        <h3>Zapatillas Urbanas</h3>
-        <p>$119.00</p>
-        <button class="btn">Agregar al carrito</button>
-      </div>
-
-      <div class="card" data-nombre="Zapatilla Casual">
-        <img src="img/Zapatilla-Casual.png" alt="Zapatilla Casual">
-        <h3>Zapatilla Casual</h3>
-        <p>$119.00</p>
-        <button class="btn">Agregar al carrito</button>
-      </div>
-
+      <button class="prev" onclick="moveSlide(this, -1)">&#10094;</button>
+      <button class="next" onclick="moveSlide(this, 1)">&#10095;</button>
     </div>
+  </div>
+  <h3>Alfombras para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<!-- Card normal cuadrada estilo Temu -->
+<div class="card" data-nombre="Zapatilla Deportiva">
+  <div class="card-image">
+    <img src="img/zapatillas Deportivas.jpg" alt="Zapatilla Deportiva">
+  </div>
+  <h3>Zapatilla Deportiva</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="Maletín de Gimnasio">
+  <div class="card-image">
+    <img src="img/MaletinDeGimnasio.jpg" alt="Maletín de Gimnasio">
+  </div>
+  <h3>Maletín de Gimnasio</h3>
+  <p>S/ 79.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="Zapatillas Urbanas">
+  <div class="card-image">
+    <img src="img/zapatillasUrbanas.jpg" alt="Zapatillas Urbanas">
+  </div>
+  <h3>Zapatillas Urbanas</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="Zapatilla Casual">
+  <div class="card-image">
+    <img src="img/Zapatilla-Casual.png" alt="Zapatilla Casual">
+  </div>
+  <h3>Zapatilla Casual</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="reloj">
+  <div class="card-image">
+    <img src="img/reloj.jpg" alt="relox">
+  </div>
+  <h3>Reloj Digital</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
   </section>
 
   <!-- Footer con redes sociales -->

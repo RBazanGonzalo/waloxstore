@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - WALOX Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ====== ESTILO GENERAL ====== */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .registro-container {
+      max-width: 400px;
+      margin: 60px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .registro-container h2 {
+      text-align: center;
+      color: #ff4e50;
+      margin-bottom: 25px;
+    }
+
+    .registro-container label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .registro-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .registro-container button {
+      width: 100%;
+      padding: 12px;
+      background: #ff4e50;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .registro-container button:hover {
+      background: #e60000;
+    }
+
+    #mensaje {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 500px) {
+      .registro-container {
+        margin: 40px 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FORMULARIO DE REGISTRO -->
+  <div class="registro-container">
+    <h2>Crear cuenta WALOX</h2>
+    <form id="registroForm">
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez">
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" required minlength="6" placeholder="Mínimo 6 caracteres">
+
+      <label for="confirmPassword">Confirmar contraseña:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required minlength="6" placeholder="Repite tu contraseña">
+
+      <button type="submit">Registrarse</button>
+    </form>
+    <p id="mensaje"></p>
+  </div>
+
+  <!-- ====== SCRIPT DE VALIDACIÓN ====== -->
+  <script>
+    const form = document.getElementById('registroForm');
+    const mensaje = document.getElementById('mensaje');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      // Validar que las contraseñas coincidan
+      if(password !== confirmPassword) {
+        mensaje.style.color = "red";
+        mensaje.textContent = "❌ Las contraseñas no coinciden.";
+        return;
+      }
+
+      // Guardar usuario en localStorage (temporal)
+      const usuario = { nombre, email, password };
+      let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+      // Verificar si el email ya existe
+      const existe = usuarios.some(u => u.email === email);
+      if(existe) {
+        mensaje.style.color = "red";
+        mensaje.textContent = "❌ Este correo ya está registrado.";
+        return;
+      }
+
+      usuarios.push(usuario);
+      localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+      mensaje.style.color = "green";
+      mensaje.textContent = "✅ Registro exitoso!";
+
+      // Limpiar formulario
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
