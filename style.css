@@ -195,49 +195,6 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 1200px) {
-  .productos .grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 992px) {
-  .productos .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .productos .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .nav {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    background: #ff6600;
-    padding: 10px;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    border-radius: 10px;
-  }
-
-  .nav.active {
-    display: flex;
-  }
-
-  .menu-btn {
-    display: block;
-  }
-}
-
-@media (max-width: 480px) {
-  .productos .grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* --- CARRITO --- */
 .cart {
@@ -345,19 +302,6 @@ body {
   box-shadow: 0 0 0 4px rgba(37,211,102,0.12);
 }
 
-@media (max-width: 480px) {
-  .whatsapp-float {
-    width: 56px;
-    height: 56px;
-    bottom: 14px;
-    right: 14px;
-  }
-  .whatsapp-float svg {
-    width: 28px;
-    height: 28px;
-    transform: translateY(0.5px);
-  }
-}
 
 /* --- LOGO --- */
 .logo img {
@@ -650,102 +594,7 @@ body {
   background: #f9f9f9;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
-.carousel {
-  position: relative;
-  max-width: 100%;
-  margin: auto;
-  overflow: hidden;
-  border-radius: 12px;
-}
 
-.carousel-images img {
-  display: none;
-  width: 100%;
-  border-radius: 12px;
-}
-
-.carousel-images img.active {
-  display: block;
-}
-
-.carousel button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 8px;
-  cursor: pointer;
-  border-radius: 50%;
-  font-size: 18px;
-}
-
-.carousel .prev {
-  left: 10px;
-}
-
-.carousel .next {
-  right: 10px;
-}
-
-.carousel button:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-/* Carrusel en card */
-.carousel {
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #fff;
-}
-
-.carousel-images a { display: block; }
-
-.carousel-images img {
-  display: none;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: opacity 0.25s ease;
-}
-
-.carousel-images img.active {
-  display: block;
-  opacity: 1;
-}
-
-/* Flechas */
-.carousel button.prev,
-.carousel button.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.45);
-  color: #fff;
-  border: none;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-}
-
-.carousel button.prev { left: 10px; }
-.carousel button.next { right: 10px; }
-
-.carousel button.prev:hover,
-.carousel button.next:hover { background-color: rgba(0,0,0,0.75); }
-
-@media (max-width: 600px) {
-  .carousel button.prev,
-  .carousel button.next { width: 34px; height: 34px; font-size: 18px; }
-}
 /* ==========================
    Checkout específico
    ========================== */
@@ -872,19 +721,6 @@ body {
   font-weight: bold;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .checkout {
-    margin: 1rem;
-    padding: 1rem;
-  }
-
-  .checkout-form input,
-  .checkout-form textarea,
-  .checkout-form .btn {
-    font-size: 0.95rem;
-  }
-}
 .nav {
   display: flex;
   gap: 20px;
@@ -1025,12 +861,7 @@ body {
   from { background: #ff0000; color: #fff; }
   to   { background: #fff; color: #ff0000; }
 }
-/* Móviles muy pequeños (extra pequeño, <=480px) */
-@media (max-width: 480px) {
-  .productos .grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
+
 /* ====== HAMBURGUESA SOLO EN MÓVILES ====== */
 .hamburger {
   display: none;
@@ -1041,33 +872,6 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .nav {
-    display: none;
-    flex-direction: column;
-    background: #fff;
-    position: absolute;
-    top: 70px;
-    right: 10px;
-    width: 200px;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-  .nav a {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  .nav a:last-child {
-    border-bottom: none;
-  }
-  .hamburger {
-    display: block;
-  }
-  .nav.active {
-    display: flex;
-  }
-}
 /* ============================
    Menú Hamburguesa SOLO en móviles
    ============================ */
@@ -1081,113 +885,7 @@ body {
   margin-left: auto;
 }
 
-/* Vista móvil */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block; /* mostrar en móvil */
-  }
 
-  .nav {
-    display: none; /* ocultar menú por defecto */
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    padding: 15px 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    z-index: 1000;
-  }
-
-  .nav.active {
-    display: flex; /* mostrar cuando se active */
-  }
-
-  .nav a {
-    padding: 12px 20px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-  }
-
-  .nav a:last-child {
-    border-bottom: none;
-  }
-
-  /* Ajuste de buscador e íconos en móvil */
-  .search-box {
-    flex: 1;
-    margin: 10px 0;
-    width: 90%;
-  }
-
-  .icons {
-    margin-top: 10px;
-  }
-}
-/* =============================
-   Ajustes para móviles
-============================= */
-@media (max-width: 768px) {
-
-  /* Hero */
-  .hero {
-    padding: 40px 15px;
-    text-align: center;
-  }
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-  .hero .btn {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-
-  /* Grid de productos */
-  .grid {
-    grid-template-columns: 1fr !important; /* 1 columna en móvil */
-    gap: 15px;
-  }
-  .card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  /* Header / Menú */
-  .nav {
-    display: none;
-    flex-direction: column;
-    background: #fff;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-  }
-  .nav.active {
-    display: flex;
-  }
-  .hamburger {
-    display: block;
-    font-size: 1.5rem;
-    cursor: pointer;
-    background: none;
-    border: none;
-  }
-
-  /* Dropdown Categorías */
-  .dropdown-categorias {
-    position: static !important;
-    display: none;
-  }
-  .dropdown-wrapper .categorias + .dropdown-categorias {
-    display: none;
-  }
-}
 /* === ESTILO GENERAL DE LAS CARDS === */
 .card {
   background: #fff;
@@ -1216,42 +914,6 @@ body {
   border-radius: 0;      /* bordes rectos */
 }
 
-/* === CARRUSEL === */
-.carousel {
-  width: 100%;
-  position: relative;
-}
-
-.carousel-images img {
-  display: none;         /* 🔹 todas ocultas */
-}
-
-.carousel-images img.active {
-  display: block;        /* 🔹 solo la activa se ve */
-}
-
-/* Botones del carrusel */
-.carousel button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.4);
-  color: #fff;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 5px 10px;
-  border-radius: 3px;
-}
-
-.carousel .prev { left: 5px; }
-.carousel .next { right: 5px; }
-/* Para las imágenes normales (estilo Temu) */
-.card-image {
-  width: 100%;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-}
 
 .card-image img {
   width: 100%;
@@ -1260,34 +922,15 @@ body {
   border-radius: 0; /* cuadrado, sin bordes redondeados */
 }
 
-/* Para el carrusel (no lo forzamos a cuadrado) */
-.card-image-carousel {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.card-image-carousel img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
 /* Quitar cualquier redondeo en TODAS las cards */
 .card {
   border-radius: 0 !important;
   overflow: hidden;
 }
 
-/* Asegurar que el carrusel también sea cuadrado sin bordes redondeados */
-.card-image-carousel,
-.card-image-carousel img,
-.carousel,
-.carousel-images img {
-  border-radius: 0 !important;
-}
 .hero {
   background: url("img/hero.png") no-repeat center center/cover;
-  height: 100vh;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1360,3 +1003,52 @@ body {
 .rating:hover i {
   transform: scale(1.2); /* Efecto hover elegante */
 }
+.hero-text p {
+  margin-bottom: 20px; /* agrega espacio debajo del párrafo */
+}
+
+.hero-text .btn {
+  display: inline-block;
+  margin-top: 10px; /* por si quieres aún más espacio */
+}
+/* Card general */
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 0; /* quita esquinas redondeadas */
+}
+
+/* Contenedor de imagen (normal o carrusel) */
+.card-image,
+.card-image-carousel {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0; /* esquinas cuadradas */
+}
+
+/* Imagen normal */
+.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Texto y botón debajo de la imagen */
+.card h3,
+.card p,
+.card .btn {
+  margin: 5px 0;
+  text-align: center;
+}
+
+

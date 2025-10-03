@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Walox Store</title>
   <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+  
   <!-- Favicon -->
   <link rel="icon" type="icons" href="icons/favicon-32x32-WALOX.png">
 
@@ -68,9 +69,6 @@
     <a href="index.html" class="logo">
       <img src="icons/Walox-logo.png" alt="WALOX Logo">
     </a>
-
-    <!-- Botón hamburguesa (solo visible en móviles) -->
-  <button class="hamburger" id="hamburger">☰</button>
   
     <nav class="nav">
   <a href="#"><i class="fas fa-thumbs-up"></i> Artículos más vendidos</a>
@@ -133,18 +131,10 @@
     <h2> PRODUCTOS DESTACADOS</h2>
     <div class="grid" id="productosGrid">
 
-     <!-- Card con carrusel (no cuadrado forzado, mantiene su tamaño) -->
+     <!-- Card normal sin carrusel -->
 <div class="card" data-nombre="Alfombras para Sala">
-  <div class="card-image-carousel">
-    <div class="carousel">
-      <div class="carousel-images">
-        <img src="img/Alfombra Grande.jpeg" class="active" alt="Alfombra 1" onclick="goToProduct('producto1.html')">
-        <img src="img/Alfombra Grande2.jpeg" alt="Alfombra 2" onclick="goToProduct('producto1.html')">
-        <img src="img/Alfombra Grande3.jpeg" alt="Alfombra 3" onclick="goToProduct('producto1.html')">
-      </div>
-      <button class="prev" onclick="moveSlide(this, -1)">&#10094;</button>
-      <button class="next" onclick="moveSlide(this, 1)">&#10095;</button>
-    </div>
+  <div class="card-image">
+    <img src="img/Alfombra Grande.jpeg" alt="Alfombra para Sala" onclick="goToProduct('producto1.html')">
   </div>
   <h3>Alfombras para Sala</h3>
   <p>S/ 119.00</p>
@@ -193,6 +183,15 @@
     <img src="img/reloj.jpg" alt="relox">
   </div>
   <h3>Reloj Digital</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande2.jpeg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
   <p>S/ 119.00</p>
   <button class="btn">Agregar al carrito</button>
 </div>

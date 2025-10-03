@@ -1,0 +1,192 @@
+/* ==============================
+   Estilos Mobile-First
+============================== */
+
+/* ====== Móviles pequeños (0 - 480px) ====== */
+body, html {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
+
+.grid, .productos .grid, #productosGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 8px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: none;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.hero {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 1.8rem;
+}
+
+.hero p {
+  font-size: 1rem;
+}
+
+.hero .btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.nav, .dropdown-categorias {
+  display: none !important;
+}
+
+.hamburger, .menu-btn {
+  display: block;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Botón WhatsApp flotante ajustado */
+.whatsapp-float {
+  width: 66px;       /* Hacemos más grande el círculo verde */
+  height: 66px;
+  bottom: 14px;
+  right: 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #25D366; /* Verde clásico de WhatsApp */
+  z-index: 9999;
+}
+
+/* Icono dentro del botón */
+.whatsapp-float svg {
+  width: 46px;       /* Más grande que antes */
+  height: 46px;
+  transform: translateY(0.5px);
+}
+
+
+.checkout {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.checkout-form input,
+.checkout-form textarea,
+.checkout-form .btn {
+  font-size: 0.95rem;
+}
+
+
+/* ====== Pantallas medianas (481px - 768px) ====== */
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .productos .grid, .grid, #productosGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav a:last-child {
+    border-bottom: none;
+  }
+
+  .search-box {
+    flex: 1;
+    margin: 10px 0;
+    width: 90%;
+  }
+
+  .icons {
+    margin-top: 10px;
+  }
+
+  .carousel button.prev,
+  .carousel button.next { 
+    width: 34px; 
+    height: 34px; 
+    font-size: 18px; 
+  }
+}
+
+/* ====== Tablets / laptops pequeñas (769px - 992px) ====== */
+@media (min-width: 769px) and (max-width: 992px) {
+  .productos .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ====== Laptops grandes / desktops (993px - 1200px) ====== */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .productos .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* Asegúrate que tu carrito flotante siempre esté visible */
+.cart-float, .carrito {
+  position: fixed; /* Siempre fijo en la pantalla */
+  bottom: 20px;    /* Ajusta según convenga */
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background: #ff6600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;   /* Muy alto para que quede encima de todo */
+}
+
+/* Icono dentro del carrito */
+.cart-float svg, .carrito svg {
+  width: 28px;
+  height: 28px;
+}
+/* Ocultar la barra negra superior en móviles */
+@media (max-width: 768px) {
+  .top-bar, /* si tu barra tiene esta clase */
+  header.top-bar { /* o la clase que tenga tu barra negra */
+    display: none !important;
+  }
+}
