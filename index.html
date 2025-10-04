@@ -69,14 +69,14 @@
     <a href="index.html" class="logo">
       <img src="icons/Walox-logo.png" alt="WALOX Logo">
     </a>
-  
-    <nav class="nav">
-  <a href="#"><i class="fas fa-thumbs-up"></i> Artículos más vendidos</a>
-  <a href="#" class="rating">
-  <i class="fas fa-star"></i> 5 estrellas</a>
 
+    
+  
+   <nav class="nav" id="nav-menu">
+  <a href="#"><i class="fas fa-thumbs-up"></i> Artículos más vendidos</a>
+  <a href="#" class="rating"><i class="fas fa-star"></i> 5 estrellas</a>
   <a href="#">Lo nuevo</a>
-  <a href="registro.html">Registrarse</a> <!-- Nuevo enlace -->
+  <a href="registro.html">Registrarse</a>
 
   <!-- Dropdown Categorías -->
   <div class="dropdown-wrapper">
@@ -91,18 +91,22 @@
   </div>
 </nav>
 
-    <!-- Buscador -->
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Buscar productos...">
-      <button id="searchBtn" class="search-btn" aria-label="Buscar">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
-        </svg>
-      </button>
-    </div>
-    
-     <!-- Botón hamburguesa (solo visible en móviles) -->
-  <button class="hamburger" id="hamburger">☰</button>
+    <!-- Contenedor buscador + hamburguesa -->
+<div class="search-hamburger">
+  <!-- Buscador -->
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Buscar productos...">
+    <button id="searchBtn" class="search-btn" aria-label="Buscar">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Botón hamburguesa que envía a otra página -->
+<a href="menu.html" class="hamburger">☰</a>
+
+</div>
 
     <div class="icons">
       <!-- Ayuda -->
@@ -131,7 +135,7 @@
     <h2> PRODUCTOS DESTACADOS</h2>
     <div class="grid" id="productosGrid">
 
-     <!-- Card normal sin carrusel -->
+    
 <div class="card" data-nombre="Alfombras para Sala">
   <div class="card-image">
     <img src="img/Alfombra Grande.jpeg" alt="Alfombra para Sala" onclick="goToProduct('producto1.html')">
@@ -189,7 +193,142 @@
 
 <div class="card" data-nombre="alfombra">
   <div class="card-image">
-    <img src="img/Alfombra Grande2.jpeg" alt="alfombra">
+    <img src="img/Alfombra Grande1.jpeg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande3.jpeg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande4.jpeg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande5.jpg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande6.jpeg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande7.jpeg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande8.jpeg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande9.jpeg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande10.jpeg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande11.jpeg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande12.jpeg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande13.jpeg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande14.jpeg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande15.jpeg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande16.jpeg" alt="alfombra">
+  </div>
+  <h3>Alfombra para Sala</h3>
+  <p>S/ 119.00</p>
+  <button class="btn">Agregar al carrito</button>
+</div>
+
+<div class="card" data-nombre="alfombra">
+  <div class="card-image">
+    <img src="img/Alfombra Grande17.jpeg" alt="alfombra">
   </div>
   <h3>Alfombra para Sala</h3>
   <p>S/ 119.00</p>
@@ -353,6 +492,70 @@
     navMenu.classList.toggle("active");
   });
 </script>
+
+<style>
+  /* Estilo autocompletado mejorado */
+  .search-box {
+    position: relative; /* Asegura que las sugerencias se posicionen respecto al input */
+  }
+  .suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 0px solid #ffffff;
+    border-top: none;
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    font-size: 14px;
+  }
+  .suggestions div {
+    padding: 10px 12px;
+    cursor: pointer;
+  }
+  .suggestions div:hover {
+    background-color: #f0f0f0;
+  }
+</style>
+
+<script>
+  // Autocompletado dinámico
+  const searchInput = document.getElementById("searchInput");
+  const suggestionsBox = document.createElement("div");
+  suggestionsBox.className = "suggestions";
+  searchInput.parentNode.appendChild(suggestionsBox);
+
+  // Tomar todos los nombres de productos de tus cards
+  const productosArray = Array.from(document.querySelectorAll("#productosGrid .card"))
+    .map(card => card.dataset.nombre || card.querySelector("h3").innerText);
+
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    suggestionsBox.innerHTML = "";
+    if (query.length > 0) {
+      const filtrados = productosArray.filter(p => p.toLowerCase().includes(query));
+      filtrados.forEach(p => {
+        const div = document.createElement("div");
+        div.textContent = p;
+        div.addEventListener("click", () => {
+          searchInput.value = p;
+          suggestionsBox.innerHTML = "";
+        });
+        suggestionsBox.appendChild(div);
+      });
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!searchInput.contains(e.target)) {
+      suggestionsBox.innerHTML = "";
+    }
+  });
+</script>
+
 
 </body>
 </html>

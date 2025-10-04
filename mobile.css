@@ -1,22 +1,66 @@
-/* ==============================
-   Estilos Mobile-First
-============================== */
-
-/* ====== Móviles pequeños (0 - 480px) ====== */
-body, html {
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow-x: hidden !important;
-  box-sizing: border-box;
+/* Ocultar menú de escritorio en móviles */
+.nav {
+  display: none;
 }
 
-.grid, .productos .grid, #productosGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
-  padding: 8px;
-  width: 100%;
-  margin: 0 auto;
+/* Ajustar menú móvil */
+.search-hamburger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Buscador */
+.search-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin-right: 15px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  font-size: 14px;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Iconos */
+.menu-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-btn, .hamburger {
+  font-size: 22px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease;
+}
+
+.icon-btn:hover, .hamburger:hover {
+  color: #ff4c4c;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .card {
@@ -33,26 +77,8 @@ body, html {
   object-fit: cover;
 }
 
-.hero {
-  padding: 40px 15px;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 1.8rem;
-}
-
-.hero p {
-  font-size: 1rem;
-}
-
-.hero .btn {
-  padding: 8px 16px;
-  font-size: 0.9rem;
-}
-
 .nav, .dropdown-categorias {
-  display: none !important;
+  display: none;
 }
 
 .hamburger, .menu-btn {
@@ -65,8 +91,8 @@ body, html {
 
 /* Botón WhatsApp flotante ajustado */
 .whatsapp-float {
-  width: 66px;       /* Hacemos más grande el círculo verde */
-  height: 66px;
+  width: 60px;       /* Hacemos más grande el círculo verde */
+  height: 60px;
   bottom: 14px;
   right: 14px;
   border-radius: 50%;
@@ -190,3 +216,422 @@ body, html {
     display: none !important;
   }
 }
+
+/* Móvil */
+@media (max-width:768px) {
+  .nav {
+    display: none;      /* Oculto inicialmente */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .nav.active {
+    display: flex;      /* Mostrar cuando se haga toggle */
+  }
+
+  .hamburger {
+    display: block;     /* Mostrar solo en móvil */
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+/* Header móvil estilo limpio tipo Temu */
+@media (max-width: 768px) {
+  /* Ocultar logo */
+  .header .logo {
+    display: none !important;
+  }
+
+  /* Mostrar solo buscador y hamburguesa */
+  .header {
+    display: flex;
+    justify-content: space-between; /* Hamb + buscador */
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .search-box {
+    flex: 1;
+    margin: 0 10px;
+  }
+
+  .hamburger {
+    font-size: 1.8rem;
+    z-index: 1001;
+  }
+
+  /* Ajustar íconos del header */
+  .icons {
+    display: none; /* Ocultamos los demás iconos para simplificar */
+  }
+
+  /* Ajuste dropdown nav en móvil */
+  .nav {
+    position: absolute;
+    top: 50px; /* debajo del header */
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    display: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+}
+@media (max-width: 768px) {
+  .search-hamburger {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center; /* centra los elementos dentro del header */
+    gap: 10px; /* espacio entre buscador y hamburguesa */
+  }
+
+  .search-box {
+    flex: 1 1 70%;  /* que el buscador ocupe como máximo 70% */
+    max-width: 250px; /* opcional: limitar el tamaño */
+    margin: 0;
+  }
+
+  .hamburger {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-box {
+    position: relative;
+    flex: 1 1 70%;
+    max-width: 250px;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 8px 40px 8px 10px; /* espacio a la derecha para la lupa */
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+  }
+
+  .search-box .search-btn {
+    position: absolute;
+    right: 5px;  /* separación del borde derecho */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+  }
+}
+
+.search-box input {
+  border: none;       /* elimina el borde */
+  outline: none;      /* elimina el borde que aparece al enfocarlo */
+  box-shadow: none;   /* elimina cualquier sombra que genere un efecto de borde */
+  padding: 8px 35px 8px 10px; /* ajusta el padding para la lupa */
+  border-radius: 6px; /* si quieres esquinas redondeadas */
+}
+
+/* Ocultar hero en móviles */
+@media (max-width: 768px) {
+  .hero {
+    display: none !important;
+  }
+}
+
+/* ====== Móviles (hasta 768px) ====== */
+@media (max-width: 768px) {
+  .productos .grid, .grid, #productosGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columnas iguales que ocupan todo el ancho */
+    gap: 4px;        /* menos espacio entre las imágenes */
+    padding: 4px;    /* menos espacio alrededor del grid */
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .card {
+    width: 100%;     /* la card ocupa toda la columna */
+    margin: 0;
+    padding: 0;
+  }
+
+  .card img {
+    width: 100%;     /* imagen ocupa toda la card */
+    height: auto;    /* mantiene la proporción */
+    object-fit: cover;
+    display: block;
+  }
+}
+/* ====== Estilos móviles (max-width: 768px) ====== */
+@media (max-width: 768px) {
+
+  /* Mostrar 2 productos por fila */
+  .productos .grid, .grid, #productosGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    padding: 8px;
+  }
+
+  /* Ajustar tamaño de las imágenes de los productos */
+  .card img {
+    width: 100%; /* ocupar todo el ancho de la columna */
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Títulos más pequeños */
+  .card h3 {
+    font-size: 1rem;     /* más pequeño */
+    line-height: 1.2rem;
+    margin: 6px 0 4px 0;
+  }
+
+  /* Precio un poco más pequeño */
+  .card p {
+    font-size: 0.85rem;
+    margin: 2px 0 6px 0;
+  }
+
+  /* Ajuste botones si es necesario */
+  .card .btn {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
+
+/* Botón de usuario */
+.user-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+.user-btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Contenedor full-width sin espacios extra */
+.search-hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* buscador a la izquierda, iconos a la derecha */
+  width: 100%;
+  padding: 0;      /* eliminamos padding externo */
+  margin: 0;       /* eliminamos margen */
+  box-sizing: border-box;
+}
+
+/* Buscador expandible */
+.search-box {
+  flex: 1 1 auto;
+  min-width: 0;    /* permite que se encoja si es necesario */
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 6px 30px 6px 8px; /* más compacto */
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.search-box .search-btn {
+  position: absolute;
+  top: 50%;
+  right: 4px;        /* pegado al borde del input */
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-box .search-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Iconos: usuario, hamburguesa, carrito */
+.user-btn,
+.hamburger,
+.cart-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  padding: 4px;      /* más compacto */
+  margin-left: 4px;   /* pequeño espacio entre iconos */
+  flex-shrink: 0;
+}
+
+.user-btn svg,
+.hamburger svg {
+  width: 22px;
+  height: 22px;
+}
+
+.cart-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Ocultar logo en móviles */
+@media (max-width: 768px) {
+  .header .logo {
+    display: none !important;
+  }
+}
+
+input[type="search"] {
+  width: 90%;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  display: block;
+  font-size: 14px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+/* 🔥 Reset para evitar espacios inesperados */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ✅ Grid ocupa todo el ancho sin márgenes */
+.productos .grid, .grid, #productosGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  width: 100%;
+  margin: 0;      /* Quitamos auto */
+  padding: 0;     /* Quitamos padding */
+}
+
+/* ✅ Input buscador ocupa todo */
+input[type="search"] {
+  width: 100%;       /* Ahora ocupa todo el ancho */
+  max-width: none;   /* Quitamos límite */
+  margin: 10px 0;    /* Solo espacio arriba y abajo */
+}
+
+/* Reset total en móvil */
+@media (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden; /* evita scroll lateral */
+  }
+
+  /* Contenedor principal */
+  .container, .grid, .productos {
+    width: 100% !important; /* fuerza ocupar todo el ancho */
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+  }
+
+  /* Cards de productos (2 columnas) */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px; /* ajusta separación */
+  }
+
+  .card {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 3px;
+  }
+
+  /* Imágenes ajustadas al 100% */
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    gap: 0 !important;      /* quita separación entre productos */
+    padding:  0 !important;  /* quita espacio interno del grid */
+  }
+
+  .card {
+    border: none !important;       /* sin borde */
+    box-shadow: none !important;   /* sin sombra */
+    padding: 1 !important;         /* sin padding */
+    margin: 0 !important;          /* sin márgenes */
+  }
+}
+
+@media (max-width: 768px) {
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px; /* esquinas apenas redondeadas */
+  }
+
+  /* Si quieres que toda la tarjeta tenga esquinas suaves */
+  .card {
+    border-radius: 5px;
+    overflow: hidden; /* asegura que la imagen no sobresalga */
+  }
+}
+
+.hamburger {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;     /* color del ícono */
+  text-decoration: none; /* quita el subrayado típico de enlaces */
+}
+
