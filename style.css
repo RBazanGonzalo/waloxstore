@@ -1091,3 +1091,13 @@ body {
   background-color: #f0f0f0; /* Hover gris claro */
 }
 
+/* Oculta carrito y menú en versión escritorio */
+@media (min-width: 769px) {
+  .hamburger-combined-btn,
+  .cart-btn,
+  .menu-toggle,
+  .mobile-only {
+    display: none !important;
+  }
+}
+

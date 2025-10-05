@@ -91,8 +91,8 @@ body, html {
 
 /* Botón WhatsApp flotante ajustado */
 .whatsapp-float {
-  width: 60px;       /* Hacemos más grande el círculo verde */
-  height: 60px;
+  width: 59px;       /* Hacemos más grande el círculo verde */
+  height: 59px;
   bottom: 14px;
   right: 14px;
   border-radius: 50%;
@@ -105,8 +105,8 @@ body, html {
 
 /* Icono dentro del botón */
 .whatsapp-float svg {
-  width: 46px;       /* Más grande que antes */
-  height: 46px;
+  width: 42px;       /* Más grande que antes */
+  height: 42px;
   transform: translateY(0.5px);
 }
 
@@ -635,3 +635,105 @@ input[type="search"] {
   text-decoration: none; /* quita el subrayado típico de enlaces */
 }
 
+.cart-btn svg {
+  stroke: #111;
+  transition: transform 0.2s ease, stroke 0.2s ease;
+}
+
+.cart-btn:hover svg {
+  transform: scale(1.1);
+  stroke: #e63946; /* Rojo WALOX */
+}
+
+/* Estilo para el botón combinado (⋮☰) */
+.hamburger-combined-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;        /* espacio total del botón */
+  height: 42px;
+  padding: 6px;
+  background: #ffffff;   /* fondo blanco (cambiar si quieres) */
+  border-radius: 10px;/* suaviza el contorno del botón */
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  text-decoration: none;
+  color: #222;        /* color del trazo */
+  transition: transform 0.14s ease, box-shadow 0.14s ease, color 0.14s ease;
+}
+
+/* Color del SVG: usa currentColor (hereda color) */
+.hamburger-combined-btn svg { 
+  fill: none;
+  stroke: currentColor;
+  stroke: #222; /* fallback */
+}
+
+/* Hover / active (tap) */
+.hamburger-combined-btn:hover,
+.hamburger-combined-btn:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  color: #ff5b00; /* color tipo Temu (ajusta si quieres) */
+}
+
+/* En móvil asegúrate que el botón se muestre donde corresponda */
+@media (max-width: 768px) {
+  .hamburger-combined-btn { width: 40px; height: 40px; }
+  .hamburger-combined-btn svg { width: 24px; height: 24px; }
+}
+
+.back-btn {
+  font-size: 1.5rem;
+  color: #333;
+  text-decoration: none;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* Solo en la página menu.html */
+body.menu-page .hamburger-combined-btn svg line,
+body.menu-page .hamburger-combined-btn svg circle {
+  stroke: #ff6600; /* color naranja */
+  fill: #ff6600;
+}
+
+/* Menú vertical debajo del header */
+.side-menu {
+  width: 200px; /* ancho fijo o ajustable */
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin: 10px auto; /* centrado horizontal */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu li {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.side-menu li:last-child {
+  border-bottom: none;
+}
+
+.side-menu a {
+  display: block;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.side-menu a:hover {
+  background-color: #ff6600;
+  color: #fff;
+}
