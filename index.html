@@ -85,6 +85,7 @@
       <a href="hogar.html">Hogar</a>
       <a href="juguetes.html">Juguetes</a>
       <a href="deportes.html">Deportes</a>
+      <a href="accesorios.html">Accesorios</a>
     </div>
   </div>
 </nav>
@@ -118,8 +119,23 @@
   </svg>
 </a>
 
+<!-- Botón de usuario / inicio de sesión -->
+<div class="user-menu mobile-only">
+  <button class="user-btn" aria-label="Usuario">
+<!-- Icono humano -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+    </svg>  </button>
+  
+  <div class="user-dropdown">
+    <a href="iniciar sesion-registrarse.html">Iniciar sesión / Registrarse</a>
+    <!-- Aquí puedes añadir más links para usuarios logueados si quieres -->
+  </div>
+</div>
+
+
   <!-- Carrito con bordes más redondeados -->
-<button class="cart-btn" aria-label="Carrito">
+<button class="cart-btn" aria-label="Carrito" onclick="window.location.href='checkout.html'">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
     fill="none" stroke="currentColor" stroke-width="1.8"
     stroke-linecap="round" stroke-linejoin="round" width="26" height="26">
@@ -130,11 +146,10 @@
   </svg>
 </button>
 
+
 </div>
 
     <div class="icons">
-      <!-- Ayuda -->
-      <a href="#" class="help" aria-label="Ayuda"><i class="fas fa-circle-question"></i></a>
 
       <a href="checkout.html" class="cart" aria-label="Carrito">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -144,6 +159,18 @@
       </a>
     </div>
   </header>
+
+<!-- Menú de categorías móvil -->
+<div class="category-scroll mobile-only">
+  <a href="todos.html" class="category-item active">Todos</a>
+  <a href="ropa.html" class="category-item">Ropa</a>
+  <a href="electronica.html" class="category-item">Electrónica</a>
+  <a href="hogar.html" class="category-item">Hogar</a>
+  <a href="juguetes.html" class="category-item">Juguetes</a>
+  <a href="deportes.html" class="category-item">Deportes</a>
+  <a href="accesorios.html" class="category-item">Accesorios</a>
+</div>
+
 
  <!-- Hero principal -->
 <section class="hero" id="top-hero">
@@ -164,7 +191,7 @@
   <div class="card-image">
     <img src="img/Alfombra Grande.jpeg" alt="Alfombra para Sala" onclick="goToProduct('producto1.html')">
   </div>
-  <h3>Alfombras para Sala</h3>
+  <h3>Alfombra para Sala</h3>
   <p>S/ 119.00</p>
   <button class="btn">Agregar al carrito</button>
 </div>
@@ -580,6 +607,26 @@
   });
 </script>
 
+<script>
+
+document.addEventListener('DOMContentLoaded', () => {
+  const userBtn = document.querySelector('.user-btn');
+  const userMenu = document.querySelector('.user-menu');
+
+  if (userBtn && userMenu) {
+    userBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // evita cerrar inmediatamente
+      userMenu.classList.toggle('active');
+    });
+
+    // Cerrar si se hace clic fuera del menú
+    document.addEventListener('click', () => {
+      userMenu.classList.remove('active');
+    });
+  }
+});
+
+</script>
 
 </body>
 </html>

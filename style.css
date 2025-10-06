@@ -1101,3 +1101,62 @@ body {
   }
 }
 
+/* Ocultar en escritorio */
+.mobile-header-only {
+  display: none !important;
+}
+
+/* Mostrar solo en móviles */
+@media (max-width: 768px) {
+  .mobile-header-only {
+    display: block !important;
+  }
+}
+
+/* Solo para móviles: pantallas de 768px o menos */
+@media (max-width: 768px) {
+  .header-desktop,
+  .top-bar,
+  .category-scroll-desktop {
+    display: none !important;
+  }
+}
+
+.mobile-top-container,
+.search-hamburger,
+.category-scroll {
+  position: relative !important;
+}
+
+/* 🔸 Solo para móviles */
+@media (max-width: 768px) {
+  /* Oculta el buscador de escritorio si existe */
+  .desktop-only,
+  .search-box.desktop-only {
+    display: none !important;
+  }
+
+  /* Ajusta el buscador móvil */
+  .search-box {
+    border: 1px solid #ccc !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+  }
+
+  .search-box input {
+    height: 34px !important;
+    font-size: 14px !important;
+  }
+
+  /* Botón de lupa transparente */
+  .search-box button {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .search-box button svg {
+    color: #000 !important;
+  }
+}
+

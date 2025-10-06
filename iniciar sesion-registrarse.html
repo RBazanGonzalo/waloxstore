@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuenta WALOX</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 60px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+
+    .tabs {
+      display: flex;
+      background: #ff4e50;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 12px 0;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .tab.active {
+      background: #e60000;
+    }
+
+    .form-container {
+      padding: 30px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #ff4e50;
+      margin-bottom: 25px;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 12px;
+      background: #ff4e50;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .form-container button:hover {
+      background: #e60000;
+    }
+
+    #mensaje {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        margin: 40px 20px;
+        padding: 0;
+      }
+
+      .form-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- TABS -->
+    <div class="tabs">
+      <div class="tab active" id="tab-login">Iniciar sesión</div>
+      <div class="tab" id="tab-registro">Registrarse</div>
+    </div>
+
+    <!-- LOGIN -->
+    <div class="form-container" id="login-form">
+      <h2>Iniciar sesión</h2>
+      <form id="loginForm">
+        <label for="loginEmail">Correo electrónico:</label>
+        <input type="email" id="loginEmail" name="loginEmail" required placeholder="correo@ejemplo.com">
+
+        <label for="loginPassword">Contraseña:</label>
+        <input type="password" id="loginPassword" name="loginPassword" required placeholder="Tu contraseña">
+
+        <button type="submit">Iniciar sesión</button>
+      </form>
+      <p id="loginMensaje"></p>
+    </div>
+
+    <!-- REGISTRO -->
+    <div class="form-container" id="registro-form" style="display:none;">
+      <h2>Crear cuenta WALOX</h2>
+      <form id="registroForm">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Juan Pérez">
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com">
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required minlength="6" placeholder="Mínimo 6 caracteres">
+
+        <label for="confirmPassword">Confirmar contraseña:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required minlength="6" placeholder="Repite tu contraseña">
+
+        <button type="submit">Registrarse</button>
+      </form>
+      <p id="mensaje"></p>
+    </div>
+  </div>
+
+  <script>
+    // Alternar pestañas
+    const tabLogin = document.getElementById('tab-login');
+    const tabRegistro = document.getElementById('tab-registro');
+    const loginFormContainer = document.getElementById('login-form');
+    const registroFormContainer = document.getElementById('registro-form');
+
+    tabLogin.addEventListener('click', () => {
+      tabLogin.classList.add('active');
+      tabRegistro.classList.remove('active');
+      loginFormContainer.style.display = 'block';
+      registroFormContainer.style.display = 'none';
+    });
+
+    tabRegistro.addEventListener('click', () => {
+      tabRegistro.classList.add('active');
+      tabLogin.classList.remove('active');
+      registroFormContainer.style.display = 'block';
+      loginFormContainer.style.display = 'none';
+    });
+
+    // ====== LOGIN ======
+    const loginForm = document.getElementById('loginForm');
+    const loginMensaje = document.getElementById('loginMensaje');
+
+    loginForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+
+      const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+      const usuario = usuarios.find(u => u.email === email && u.password === password);
+
+      if(usuario){
+        loginMensaje.style.color = "green";
+        loginMensaje.textContent = "✅ Inicio de sesión exitoso!";
+        loginForm.reset();
+      } else {
+        loginMensaje.style.color = "red";
+        loginMensaje.textContent = "❌ Usuario o contraseña incorrectos.";
+      }
+    });
+
+    // ====== REGISTRO ======
+    const registroForm = document.getElementById('registroForm');
+    const mensaje = document.getElementById('mensaje');
+
+    registroForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if(password !== confirmPassword) {
+        mensaje.style.color = "red";
+        mensaje.textContent = "❌ Las contraseñas no coinciden.";
+        return;
+      }
+
+      let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+      const existe = usuarios.some(u => u.email === email);
+      if(existe) {
+        mensaje.style.color = "red";
+        mensaje.textContent = "❌ Este correo ya está registrado.";
+        return;
+      }
+
+      usuarios.push({ nombre, email, password });
+      localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+      mensaje.style.color = "green";
+      mensaje.textContent = "✅ Registro exitoso!";
+      registroForm.reset();
+    });
+  </script>
+
+</body>
+</html>

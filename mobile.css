@@ -737,3 +737,316 @@ body.menu-page .hamburger-combined-btn svg circle {
   background-color: #ff6600;
   color: #fff;
 }
+
+/* Mostrar solo en móviles */
+@media (max-width: 768px) {
+  .mobile-only {
+    display: inline-block !important;
+    position: relative !important;
+    margin-left: 10px !important;
+  }
+
+  .user-dropdown {
+    display: none !important;
+    position: absolute !important;
+    top: 40px !important;
+    right: 0 !important;
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+    min-width: 180px !important;
+    z-index: 1000 !important;
+  }
+
+  .user-dropdown a {
+    display: block !important;
+    padding: 10px 15px !important;
+    text-decoration: none !important;
+    color: #333 !important;
+    font-size: 14px !important;
+  }
+
+  .user-dropdown a:hover {
+    background-color: #f5f5f5 !important;
+  }
+
+  .user-menu.active .user-dropdown {
+    display: block !important;
+  }
+}
+
+/* Ocultar "PRODUCTOS DESTACADOS" solo en móviles */
+@media (max-width: 768px) {
+  h2 {
+    display: none;
+  }
+}
+
+/* Aseguramos que el menú sea horizontal y separado de otros estilos */
+.mobile-only.category-scroll {
+  display: flex !important;        /* forzamos fila horizontal */
+  flex-direction: row !important;  /* izquierda → derecha */
+  overflow-x: auto !important;     /* permite scroll horizontal */
+  gap: 10px !important;            /* espacio entre items */
+  padding: 10px 5px !important;
+  background: #fff;
+  -webkit-overflow-scrolling: touch; /* suaviza scroll en iOS */
+  scrollbar-width: none;           /* Firefox: oculta scrollbar */
+}
+
+.mobile-only.category-scroll::-webkit-scrollbar {
+  display: none;                    /* Chrome/Safari: oculta scrollbar */
+}
+
+.mobile-only.category-item {
+  flex: 0 0 auto !important;       /* que no se encojan */
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: #f0f0f0;
+  font-size: 0.9rem;
+  white-space: nowrap;             /* evita wrap */
+  cursor: pointer;
+  text-align: center;
+}
+
+.mobile-only.category-item.active {
+  background: #ff6600;
+  color: #fff;
+}
+
+.mobile-only.category-item:hover {
+  background: #ff6600;
+  color: #fff;
+}
+
+/* Contenedor principal del buscador + hamburguesa + carrito */
+.search-hamburger {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 2px 10px !important;
+  gap: 8px !important;
+  background: #fff !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 999 !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* Para que no tape el menú de categorías */
+body {
+  padding-top: 25px !important; /* ajusta según la altura de .search-hamburger */
+}
+
+/* Buscador ancho y estable */
+.search-box {
+  display: flex !important;
+  flex: 1 !important;
+  max-width: 400px !important; /* ancho máximo */
+  margin: 0 !important;
+  gap: 5px !important;
+}
+
+.search-box input {
+  flex: 1 !important;
+  padding: 6px 10px !important;
+  font-size: 0.95rem !important;
+  border-radius: 6px !important;
+  border: 1px solid #ccc !important;
+}
+
+/* Botón de búsqueda con ícono sin cambiar color */
+.search-box .search-btn {
+  padding: 6px 10px !important;
+  border-radius: 6px !important;
+  border: none !important;
+  background: #fff !important; /* transparente / blanco */
+  color: inherit !important; /* mantiene color negro predeterminado del icono */
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Contenedor de los íconos a la derecha */
+.iconos-derecha {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important; /* menos espacio entre íconos */
+}
+
+/* Botón combinado de menú */
+.hamburger-combined-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 4px !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+/* Botón de usuario */
+.user-menu {
+  position: relative !important;
+}
+
+.user-btn {
+  padding: 4px !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+/* Dropdown usuario */
+.user-dropdown {
+  display: none !important;
+  position: absolute !important;
+  top: 110% !important;
+  right: 0 !important;
+  background: #fff !important;
+  border: 1px solid #ccc !important;
+  border-radius: 5px !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
+  z-index: 100 !important;
+}
+
+.user-menu:hover .user-dropdown {
+  display: block !important;
+}
+
+/* Carrito */
+.cart-btn {
+  padding: 4px !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+/* --- Responsive móviles --- */
+@media (max-width: 768px) {
+  .search-hamburger {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    padding: 2px 5px !important;
+  }
+
+  .search-box {
+    max-width: 280px !important; /* ancho mínimo para móviles */
+  }
+
+  .search-box input {
+    padding: 5px 8px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .search-box .search-btn {
+    padding: 5px 8px !important;
+  }
+}
+
+.search-box .search-btn {
+  padding: 6px 10px !important;
+  border-radius: 6px !important;
+  border: none !important;
+  background: #f0f0f0 !important; /* pequeño fondo claro para resaltar */
+  color: #333 !important; /* color gris oscuro intenso */
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: 0.2s;
+}
+
+.search-box .search-btn:hover {
+  background: #e0e0e0 !important; /* efecto hover para que se note */
+}
+
+/* Hover: naranja, bordes redondeados y un poquito más ancho */
+.category-scroll.mobile-only .category-item:hover {
+  background-color: #ff6600 !important;
+  border-radius: 20px !important;
+  color: #fff !important;
+  padding-left: 8px !important;   /* un poquito más ancho */
+  padding-right: 8px !important;
+  transition: 0.3s;
+}
+
+/* Activa: naranja fijo, bordes redondeados y más ancho */
+.category-scroll.mobile-only .category-item.active {
+  background-color: #ff6600 !important;
+  border-radius: 20px !important;
+  color: #fff !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .category-scroll {
+    position: sticky !important;
+    top: 0px !important; /* altura del header o buscador */
+    z-index: 999 !important;
+    background-color: #fff !important; /* para que no se mezcle con el fondo */
+    border-bottom: 1px solid #eee !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body, html {
+    overflow-x: hidden !important;
+  }
+
+  /* Asegurar que el contenedor padre permita sticky */
+  main, .container, .content {
+    overflow: visible !important;
+  }
+
+  /* Fijar el menú de categorías */
+  .category-scroll {
+    position: fixed !important;
+    top: 45px !important; /* ajusta según la altura del header/buscador */
+    left: 0;
+    right: 0;
+    z-index: 999 !important;
+    background: #fff !important;
+    border-bottom: 1px solid #eee !important;
+  }
+
+  /* Evitar que el contenido suba debajo del menú */
+  .content, main {
+    padding-top: 55px !important; /* da espacio al nuevo menú fijo */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Ajuste para que las imágenes no queden tapadas */
+  .main-content, 
+  .productos, 
+  .banner, 
+  .contenedor-imagenes, 
+  .hero-section {
+    margin-top: 46.5px !important; /* ajusta el valor si aún se ve tapado */
+  }
+}
+
+@media (max-width: 768px) {
+  .search-box input {
+    height: 20px !important;
+    padding: 4px 8px !important;
+    font-size: 14px !important;
+    border-width: 0px !important; /* Borde más delgado */
+  }
+
+  .search-box button {
+    height: 25px !important;
+    width: 34px !important;
+    padding: 0 !important;
+  }
+}
+
+
