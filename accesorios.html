@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accesorios - WALOX Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+  <link rel="icon" type="icons" href="icons/favicon-32x32-WALOX.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Hero personalizado para Accesorios */
+    .hero { 
+      text-align:center; 
+      padding:60px 20px; 
+      background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), 
+                  url('img/hero-accesorios.jpg') center/cover no-repeat; 
+      color:#fff; 
+    }
+    .hero .btn { background:#ff6600; color:#fff; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; }
+  </style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="top-bar">
+  <div class="top-left">
+    <span><i class="fas fa-truck"></i> Envío gratuito</span>
+  </div>
+  <div class="separator">|</div>
+  <div class="top-center">
+    <div class="marquee-vertical">
+      <div class="marquee-item"><i class="fas fa-star"></i> Ofertas exclusivas para ti</div>
+      <div class="marquee-item"><i class="fas fa-check-circle"></i> Entrega garantizada</div>
+      <div class="marquee-item"><i class="fas fa-rotate"></i> Devoluciones hasta 90 días</div>
+    </div>
+  </div>
+  <div class="separator">|</div>
+  <div class="top-right">
+    <span><i class="fas fa-mobile-alt"></i> Descarga nuestra app</span>
+  </div>
+</div>
+
+<!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="icons/Walox-logo.png" alt="WALOX Logo">
+    </a>
+
+    
+  
+   <nav class="nav" id="nav-menu">
+  <a href="#"><i class="fas fa-thumbs-up"></i> Artículos más vendidos</a>
+  <a href="#" class="rating"><i class="fas fa-star"></i> 5 estrellas</a>
+  <a href="#">Lo nuevo</a>
+  <a href="iniciar sesion-registrarse.html">Registrarse</a>
+
+  <!-- Dropdown Categorías -->
+  <div class="dropdown-wrapper">
+    <a href="javascript:void(0);" class="categorias">Categorías <i class="fas fa-chevron-down"></i></a>
+    <div class="dropdown-categorias">
+      <a href="ropa.html">Ropa</a>
+      <a href="electronica.html">Electrónica</a>
+      <a href="hogar.html">Hogar</a>
+      <a href="juguetes.html">Juguetes</a>
+      <a href="deportes.html">Deportes</a>
+      <a href="accesorios.html">Accesorios</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Contenedor buscador + hamburguesa + carrito -->
+<div class="search-hamburger">
+  
+  <!-- Buscador -->
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Buscar productos...">
+    <button id="searchBtn" class="search-btn" aria-label="Buscar">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor" width="20" height="20">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+      </svg>
+    </button>
+  </div>
+
+<!-- Botón de menú combinado: tres puntos verticales a la izquierda + hamburguesa a la derecha -->
+<a href="menu.html" class="hamburger-combined-btn" aria-label="Menú">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true" focusable="false">
+    <!-- puntos verticales (izquierda) -->
+    <circle cx="6"  cy="7"  r="1.2" />
+    <circle cx="6"  cy="14" r="1.2" />
+    <circle cx="6"  cy="21" r="1.2" />
+    <!-- líneas hamburguesa (derecha) -->
+    <line x1="10" y1="7"  x2="22" y2="7"  stroke-width="2" stroke-linecap="round" />
+    <line x1="10" y1="14" x2="22" y2="14" stroke-width="2" stroke-linecap="round" />
+    <line x1="10" y1="21" x2="22" y2="21" stroke-width="2" stroke-linecap="round" />
+  </svg>
+</a>
+
+<!-- Botón de usuario / inicio de sesión -->
+<div class="user-menu mobile-only">
+  <button class="user-btn" aria-label="Usuario">
+<!-- Icono humano -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+    </svg>  </button>
+  
+  <div class="user-dropdown">
+    <a href="iniciar sesion-registrarse.html">Iniciar sesión / Registrarse</a>
+    <!-- Aquí puedes añadir más links para usuarios logueados si quieres -->
+  </div>
+</div>
+
+
+  <!-- Carrito con bordes más redondeados -->
+<button class="cart-btn" aria-label="Carrito" onclick="window.location.href='checkout.html'">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+    fill="none" stroke="currentColor" stroke-width="1.8"
+    stroke-linecap="round" stroke-linejoin="round" width="26" height="26">
+    <path d="M6 6h15l-1.5 9h-12z" />
+    <circle cx="9" cy="20" r="1.5" />
+    <circle cx="18" cy="20" r="1.5" />
+    <path d="M6 6L5 3H2" />
+  </svg>
+</button>
+
+
+</div>
+
+    <div class="icons">
+
+      <a href="checkout.html" class="cart" aria-label="Carrito">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.2 14l.8-2h9c.7 0 1.4-.4 1.7-1l3.6-6.5A1 1 0 0 0 21.5 3H5.2L4.3 1H1v2h2l3.6 7.6-1.3 2.4C4.5 14.4 5.5 16 7 16h12v-2H7.4c-.1 0-.3-.1-.3-.3v-.1z"/>
+        </svg>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+  </header>
+
+<!-- Menú de categorías móvil -->
+<div class="category-scroll mobile-only">
+  <a href="index.html" class="category-item">Todos</a>
+  <a href="ropa.html" class="category-item">Ropa</a>
+  <a href="electronica.html" class="category-item">Electrónica</a>
+  <a href="hogar.html" class="category-item">Hogar</a>
+  <a href="juguetes.html" class="category-item">Juguetes</a>
+  <a href="deportes.html" class="category-item">Deportes</a>
+  <a href="accesorios.html" class="category-item active">Accesorios</a>
+</div>
+
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top-hero">
+  <div class="hero-text">
+    <h1>Accesorios <span>WALOX</span></h1>
+    <p>Complementos perfectos para tu estilo diario</p>
+    <a href="#productosGrid" class="btn">Ver catálogo</a>
+  </div>
+</section>
+
+<!-- Productos Accesorios -->
+<section class="productos">
+  <h2> Accesorios Destacados</h2>
+  <div class="grid" id="productosGrid">
+
+    <div class="card" data-nombre="Reloj de Pulsera">
+      <div class="card-image">
+        <img src="img/accesorios/reloj-pulsera.jpg" alt="Reloj de Pulsera">
+      </div>
+      <h3>Reloj de Pulsera</h3>
+      <p>S/ 159.00</p>
+      <button class="btn">Agregar al carrito</button>
+    </div>
+
+    <div class="card" data-nombre="Gafas de Sol">
+      <div class="card-image">
+        <img src="img/accesorios/gafas-sol.jpg" alt="Gafas de Sol">
+      </div>
+      <h3>Gafas de Sol</h3>
+      <p>S/ 89.00</p>
+      <button class="btn">Agregar al carrito</button>
+    </div>
+
+    <div class="card" data-nombre="Cinturón de Cuero">
+      <div class="card-image">
+        <img src="img/accesorios/cinturon-cuero.jpg" alt="Cinturón de Cuero">
+      </div>
+      <h3>Cinturón de Cuero</h3>
+      <p>S/ 79.00</p>
+      <button class="btn">Agregar al carrito</button>
+    </div>
+
+    <div class="card" data-nombre="Mochila Urbana">
+      <div class="card-image">
+        <img src="img/accesorios/mochila-urbana.jpg" alt="Mochila Urbana">
+      </div>
+      <h3>Mochila Urbana</h3>
+      <p>S/ 129.00</p>
+      <button class="btn">Agregar al carrito</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>© 2025 WALOX Store | Todos los derechos reservados</p>
+  <div class="socials">
+    <a href="https://www.facebook.com/profile.php?id=61573525617136" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/walox.co/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@Walox-h2l" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.tiktok.com/@walox.co" target="_blank"><i class="fab fa-tiktok"></i></a>
+  </div>
+</footer>
+
+<a href="https://wa.me/51994240571" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="script.js"></script>
+
+</body>
+</html>

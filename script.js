@@ -78,32 +78,7 @@ window.addEventListener("click", (e) => {
   }
 });
 
-// inicializa cada carousel al cargar la página
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.carousel').forEach(carousel => {
-    const slides = carousel.querySelectorAll('.carousel-images img');
-    if (!slides.length) return;
-    if (![...slides].some(s => s.classList.contains('active'))) {
-      slides[0].classList.add('active');
-    }
-  });
-});
 
-
-// Carrusel
-function moveSlide(button, direction) {
-  const carousel = button.parentElement;
-  const slides = carousel.querySelectorAll('img');
-  let index = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
-
-  slides[index].classList.remove('active');
-  index += direction;
-
-  if (index < 0) index = slides.length - 1;
-  if (index >= slides.length) index = 0;
-
-  slides[index].classList.add('active');
-}
 
 // Función para ir al producto
 function goToProduct(url) {

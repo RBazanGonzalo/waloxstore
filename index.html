@@ -74,7 +74,7 @@
   <a href="#"><i class="fas fa-thumbs-up"></i> Artículos más vendidos</a>
   <a href="#" class="rating"><i class="fas fa-star"></i> 5 estrellas</a>
   <a href="#">Lo nuevo</a>
-  <a href="registro.html">Registrarse</a>
+  <a href="iniciar sesion-registrarse.html">Registrarse</a>
 
   <!-- Dropdown Categorías -->
   <div class="dropdown-wrapper">
@@ -189,7 +189,7 @@
     
 <div class="card" data-nombre="Alfombras para Sala">
   <div class="card-image">
-    <img src="img/Alfombra Grande.jpeg" alt="Alfombra para Sala" onclick="goToProduct('producto1.html')">
+    <img src="img/Alfombra Grande.jpeg" alt="Alfombra para Sala" onclick="goToProduct('Alfombra-Grande.html')">
   </div>
   <h3>Alfombra para Sala</h3>
   <p>S/ 119.00</p>
@@ -242,21 +242,21 @@
   <button class="btn">Agregar al carrito</button>
 </div>
 
-<div class="card" data-nombre="alfombra">
+<div class="card" data-nombre="Tope De Puerta">
   <div class="card-image">
-    <img src="img/Alfombra Grande1.jpeg" alt="alfombra">
+    <img src="img/TopeDePuerta.png" alt="Tope De Puerta">
   </div>
-  <h3>Alfombra para Sala</h3>
-  <p>S/ 119.00</p>
+  <h3>Tope De Puerta Magnetica</h3>
+  <p>S/ 29.90</p>
   <button class="btn">Agregar al carrito</button>
 </div>
 
-<div class="card" data-nombre="alfombra">
+<div class="card" data-nombre="Polera Con Capucha BTS">
   <div class="card-image">
-    <img src="img/Alfombra Grande3.jpeg" alt="alfombra">
+    <img src="img/poleraConCapuchaBTS.png" alt="Polera Con Capucha BTS">
   </div>
-  <h3>Alfombra para Sala</h3>
-  <p>S/ 119.00</p>
+  <h3>Polera Con Capucha BTS</h3>
+  <p>S/ 69.00</p>
   <button class="btn">Agregar al carrito</button>
 </div>
 
@@ -408,18 +408,7 @@
 
   <!-- Scripts -->
   <script>
-    // Carrusel: moveSlide
-    function moveSlide(button, direction) {
-      const carousel = button.closest('.carousel');
-      const images = carousel.querySelectorAll('.carousel-images img');
-      let current = Array.from(images).findIndex(img => img.classList.contains('active'));
-      if (current === -1) current = 0;
-      images[current].classList.remove('active');
-      let next = current + direction;
-      if (next < 0) next = images.length - 1;
-      if (next >= images.length) next = 0;
-      images[next].classList.add('active');
-    }
+
 
     // Ir a producto
     function goToProduct(url) {

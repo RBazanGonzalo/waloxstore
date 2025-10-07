@@ -3,59 +3,6 @@
   display: none;
 }
 
-/* Ajustar menú móvil */
-.search-hamburger {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-/* Buscador */
-.search-box {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 5px 10px;
-  margin-right: 15px;
-}
-
-.search-box input {
-  border: none;
-  outline: none;
-  background: transparent;
-  flex: 1;
-  font-size: 14px;
-}
-
-.search-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-/* Iconos */
-.menu-icons {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.icon-btn, .hamburger {
-  font-size: 22px;
-  text-decoration: none;
-  color: #333;
-  transition: color 0.2s ease;
-}
-
-.icon-btn:hover, .hamburger:hover {
-  color: #ff4c4c;
-}
-
 body, html {
   margin: 0;
   padding: 0;
@@ -81,13 +28,7 @@ body, html {
   display: none;
 }
 
-.hamburger, .menu-btn {
-  display: block;
-  font-size: 1.5rem;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
+
 
 /* Botón WhatsApp flotante ajustado */
 .whatsapp-float {
@@ -321,30 +262,18 @@ body, html {
   .search-box input {
     width: 100%;
     padding: 8px 40px 8px 10px; /* espacio a la derecha para la lupa */
-    border-radius: 6px;
-    border: 1px solid #ccc;
+    border-radius: 9px;
     font-size: 0.95rem;
   }
 
   .search-box .search-btn {
     position: absolute;
-    right: 5px;  /* separación del borde derecho */
+    right: 1px;  /* separación del borde derecho */
     top: 50%;
     transform: translateY(-50%);
     background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: #333;
+    
   }
-}
-
-.search-box input {
-  border: none;       /* elimina el borde */
-  outline: none;      /* elimina el borde que aparece al enfocarlo */
-  box-shadow: none;   /* elimina cualquier sombra que genere un efecto de borde */
-  padding: 8px 35px 8px 10px; /* ajusta el padding para la lupa */
-  border-radius: 6px; /* si quieres esquinas redondeadas */
 }
 
 /* Ocultar hero en móviles */
@@ -354,30 +283,7 @@ body, html {
   }
 }
 
-/* ====== Móviles (hasta 768px) ====== */
-@media (max-width: 768px) {
-  .productos .grid, .grid, #productosGrid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columnas iguales que ocupan todo el ancho */
-    gap: 4px;        /* menos espacio entre las imágenes */
-    padding: 4px;    /* menos espacio alrededor del grid */
-    width: 100%;
-    margin: 0 auto;
-  }
 
-  .card {
-    width: 100%;     /* la card ocupa toda la columna */
-    margin: 0;
-    padding: 0;
-  }
-
-  .card img {
-    width: 100%;     /* imagen ocupa toda la card */
-    height: auto;    /* mantiene la proporción */
-    object-fit: cover;
-    display: block;
-  }
-}
 /* ====== Estilos móviles (max-width: 768px) ====== */
 @media (max-width: 768px) {
 
@@ -388,32 +294,46 @@ body, html {
     padding: 8px;
   }
 
+
   /* Ajustar tamaño de las imágenes de los productos */
   .card img {
     width: 100%; /* ocupar todo el ancho de la columna */
     height: auto;
     object-fit: cover;
+    margin-bottom: 0px !important; /* menos espacio debajo de la imagen */
   }
 
-  /* Títulos más pequeños */
+  /* Títulos más pequeños y más cerca de la imagen */
   .card h3 {
-    font-size: 1rem;     /* más pequeño */
-    line-height: 1.2rem;
-    margin: 6px 0 4px 0;
+    font-size: 1rem;     
+    line-height: 1.2rem !important;
+    margin: 2px 0 !important; /* menos margen */
+    margin-top: 0 !important;
   }
 
-  /* Precio un poco más pequeño */
+  /* Precio más compacto */
   .card p {
     font-size: 0.85rem;
-    margin: 2px 0 6px 0;
+    margin: 1px 0 3px 0 !important;
+    margin-top: 0 !important;
   }
 
-  /* Ajuste botones si es necesario */
+  /* Info general más pegada (si tienes contenedor .card-info) */
+  .card-info {
+    padding: 4px 6px !important; 
+    padding-top: 0 !important;
+  }
+
+  /* Ajuste del botón */
   .card .btn {
     font-size: 0.85rem;
-    padding: 6px 10px;
+    padding: 5px 8px;
+    margin: 0 !important;
   }
 }
+
+
+
 
 /* Botón de usuario */
 .user-btn {
@@ -444,40 +364,7 @@ body, html {
   box-sizing: border-box;
 }
 
-/* Buscador expandible */
-.search-box {
-  flex: 1 1 auto;
-  min-width: 0;    /* permite que se encoja si es necesario */
-  position: relative;
-}
 
-.search-box input {
-  width: 100%;
-  padding: 6px 30px 6px 8px; /* más compacto */
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 0.9rem;
-  outline: none;
-}
-
-.search-box .search-btn {
-  position: absolute;
-  top: 50%;
-  right: 4px;        /* pegado al borde del input */
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search-box .search-btn svg {
-  width: 18px;
-  height: 18px;
-}
 
 /* Iconos: usuario, hamburguesa, carrito */
 .user-btn,
@@ -513,16 +400,7 @@ body, html {
   }
 }
 
-input[type="search"] {
-  width: 90%;
-  max-width: 400px;
-  margin: 10px auto;
-  padding: 12px;
-  border-radius: 25px;
-  border: 1px solid #ddd;
-  display: block;
-  font-size: 14px;
-}
+
 
 h2 {
   text-align: center;
@@ -550,12 +428,7 @@ h2 {
   padding: 0;     /* Quitamos padding */
 }
 
-/* ✅ Input buscador ocupa todo */
-input[type="search"] {
-  width: 100%;       /* Ahora ocupa todo el ancho */
-  max-width: none;   /* Quitamos límite */
-  margin: 10px 0;    /* Solo espacio arriba y abajo */
-}
+
 
 /* Reset total en móvil */
 @media (max-width: 768px) {
@@ -825,7 +698,7 @@ body.menu-page .hamburger-combined-btn svg circle {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  padding: 2px 10px !important;
+  padding: 1px 10px !important;
   gap: 8px !important;
   background: #fff !important;
   position: fixed !important;
@@ -841,35 +714,21 @@ body {
   padding-top: 25px !important; /* ajusta según la altura de .search-hamburger */
 }
 
-/* Buscador ancho y estable */
-.search-box {
-  display: flex !important;
-  flex: 1 !important;
-  max-width: 400px !important; /* ancho máximo */
-  margin: 0 !important;
-  gap: 5px !important;
-}
 
-.search-box input {
-  flex: 1 !important;
-  padding: 6px 10px !important;
-  font-size: 0.95rem !important;
-  border-radius: 6px !important;
-  border: 1px solid #ccc !important;
-}
 
 /* Botón de búsqueda con ícono sin cambiar color */
 .search-box .search-btn {
   padding: 6px 10px !important;
   border-radius: 6px !important;
-  border: none !important;
+  border: 1px !important;
   background: #fff !important; /* transparente / blanco */
   color: inherit !important; /* mantiene color negro predeterminado del icono */
   cursor: pointer !important;
   display: flex !important;
   align-items: center !important;
-  justify-content: center !important;
+
 }
+
 
 /* Contenedor de los íconos a la derecha */
 .iconos-derecha {
@@ -878,16 +737,38 @@ body {
   gap: 8px !important; /* menos espacio entre íconos */
 }
 
-/* Botón combinado de menú */
+/* Asegura que el botón no tenga fondo */
 .hamburger-combined-btn {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 4px !important;
+  
   background: transparent !important;
+  box-shadow: none !important;
   border: none !important;
-  cursor: pointer !important;
 }
+
+/* Elimina fondos o colores del ícono dentro (SVG o img) */
+.hamburger-combined-btn svg,
+.hamburger-combined-btn img,
+.hamburger-combined-btn::before,
+.hamburger-combined-btn::after {
+  background: transparent !important;
+  fill: currentColor !important; /* usa el color del texto, sin fondo */
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* En caso el icono tenga una capa pseudo o un background radial */
+.hamburger-combined-btn * {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Mueve la hamburguesa más cerca del icono de iniciar sesión en móvil */
+@media (max-width: 768px) {
+  .hamburger-combined-btn {
+    margin-right: -19px !important; /* acercar: puedes ajustar entre -4px y -10px */
+  }
+}
+
 
 /* Botón de usuario */
 .user-menu {
@@ -900,6 +781,13 @@ body {
   border: none !important;
   cursor: pointer !important;
 }
+
+.user-btn svg {
+    width: 25px !important;  /* antes era 24px */
+    height: 25px !important;
+  }
+
+
 
 /* Dropdown usuario */
 .user-dropdown {
@@ -927,54 +815,7 @@ body {
   cursor: pointer !important;
 }
 
-/* --- Responsive móviles --- */
-@media (max-width: 768px) {
-  .search-hamburger {
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    padding: 2px 5px !important;
-  }
 
-  .search-box {
-    max-width: 280px !important; /* ancho mínimo para móviles */
-  }
-
-  .search-box input {
-    padding: 5px 8px !important;
-    font-size: 0.9rem !important;
-  }
-
-  .search-box .search-btn {
-    padding: 5px 8px !important;
-  }
-}
-
-.search-box .search-btn {
-  padding: 6px 10px !important;
-  border-radius: 6px !important;
-  border: none !important;
-  background: #f0f0f0 !important; /* pequeño fondo claro para resaltar */
-  color: #333 !important; /* color gris oscuro intenso */
-  cursor: pointer !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  transition: 0.2s;
-}
-
-.search-box .search-btn:hover {
-  background: #e0e0e0 !important; /* efecto hover para que se note */
-}
-
-/* Hover: naranja, bordes redondeados y un poquito más ancho */
-.category-scroll.mobile-only .category-item:hover {
-  background-color: #ff6600 !important;
-  border-radius: 20px !important;
-  color: #fff !important;
-  padding-left: 8px !important;   /* un poquito más ancho */
-  padding-right: 8px !important;
-  transition: 0.3s;
-}
 
 /* Activa: naranja fijo, bordes redondeados y más ancho */
 .category-scroll.mobile-only .category-item.active {
@@ -984,6 +825,21 @@ body {
   padding-left: 8px !important;
   padding-right: 8px !important;
   transition: 0.3s;
+
+}
+
+@media (max-width: 768px) {
+  .category-scroll {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    
+  }
+
+  .category-item {
+    margin-left: 0 !important;
+    color: #000 !important;
+    text-decoration: none !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1009,7 +865,7 @@ body {
   /* Fijar el menú de categorías */
   .category-scroll {
     position: fixed !important;
-    top: 45px !important; /* ajusta según la altura del header/buscador */
+    top: 42px !important; /* ajusta según la altura del header/buscador */
     left: 0;
     right: 0;
     z-index: 999 !important;
@@ -1038,9 +894,7 @@ body {
   .search-box input {
     height: 20px !important;
     padding: 4px 8px !important;
-    font-size: 14px !important;
-    border-width: 0px !important; /* Borde más delgado */
-  }
+   }
 
   .search-box button {
     height: 25px !important;
@@ -1049,4 +903,133 @@ body {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .producto-detalle {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    margin: 20px !important;
+    max-width: 95% !important;
+  }
+
+  .producto-imagen img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .producto-info h1 {
+    font-size: 1.5rem !important;
+  }
+
+  .precio {
+    font-size: 1.3rem !important;
+  }
+
+  .descripcion {
+    font-size: 1rem !important;
+  }
+
+  .btn {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 12px !important;
+    font-size: 1rem !important;
+  }
+}
+
+.miniaturas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.miniaturas img {
+  width: 80px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.miniaturas img:hover {
+  border-color: #e60000;
+}
+
+@media (max-width: 768px) {
+  .miniaturas-scroll {
+    flex-wrap: nowrap;      /* evita varias filas */
+  }
+}
+
+/* Miniaturas: scroll horizontal solo en móvil */
+@media (max-width: 768px) {
+  .miniaturas-scroll {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;     /* scroll horizontal */
+    -webkit-overflow-scrolling: touch !important; /* suaviza scroll iOS */
+    gap: 10px !important;
+    padding: 10px 0 !important;
+    width: 100% !important;          /* solo ancho del contenedor */
+    box-sizing: border-box !important;
+    scrollbar-width: none !important;
+  }
+
+  .miniaturas-scroll::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .miniaturas-scroll img {
+    flex: 0 0 auto !important;       /* evita que se encojan */
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    border: 2px solid transparent !important;
+    transition: border-color 0.3s !important;
+  }
+
+  .miniaturas-scroll img.active,
+  .miniaturas-scroll img:hover {
+    border-color: #e60000 !important;
+  }
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 0px; /* 6px arriba/abajo, 8px izquierda/derecha */
+  border-radius: 6px;
+  background: #fff; /* o el color que quieras */
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Por defecto oculto en desktop */
+.search-box.mobile-only {
+  display: none;
+}
+
+/* Visible solo en móviles */
+@media screen and (max-width: 768px) {
+  .search-box.mobile-only {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* separación entre input y botón */
+  }
+
+  .search-box.mobile-only input {
+    flex: 1; /* ocupa el espacio disponible */
+  }
+}
+
+.btn {
+  padding: 4px 14px !important;
+  font-size: 0.85rem;
+  border-radius: 6px;
+}
 

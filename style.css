@@ -118,7 +118,7 @@ body {
   padding: 20px;
 }
 
-.card {
+.card .desktop-only{
   background: #f9f9f9;
   padding: 20px;
   border-radius: 10px;
@@ -133,11 +133,13 @@ body {
 
 .card h3 {
   margin: 10px 0;
+  margin-top: 1px;
 }
 
 .card p {
   font-weight: bold;
   color: #ff6600;
+  margin-top: 1px;
 }
 
 .card .btn {
@@ -147,6 +149,7 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 1px;
 }
 
 .card .btn:hover {
@@ -1091,6 +1094,7 @@ body {
   background-color: #f0f0f0; /* Hover gris claro */
 }
 
+
 /* Oculta carrito y menú en versión escritorio */
 @media (min-width: 769px) {
   .hamburger-combined-btn,
@@ -1157,6 +1161,50 @@ body {
 
   .search-box button svg {
     color: #000 !important;
+  }
+}
+
+.miniaturas-scroll {
+  display: flex !important;               /* fila horizontal */
+  flex-wrap: nowrap !important;           /* que no se rompan en otra fila */
+  overflow-x: auto !important;            /* habilita scroll horizontal */
+  gap: 10px !important;                   /* separación entre miniaturas */
+  padding: 10px 0 !important;
+  -webkit-overflow-scrolling: touch !important; /* suaviza scroll en iOS */
+  scrollbar-width: none !important;       /* Firefox: oculta scrollbar */
+}
+
+.miniaturas-scroll::-webkit-scrollbar {
+  display: none !important;               /* Chrome, Safari: oculta scrollbar */
+}
+
+.miniaturas-scroll img {
+  flex: 0 0 auto !important;              /* que no se encojan */
+  width: 80px !important;
+  height: 80px !important;
+  object-fit: cover !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  border: 2px solid transparent !important;
+  transition: border-color 0.3s !important;
+}
+
+.miniaturas-scroll img.active,
+.miniaturas-scroll img:hover {
+  border-color: #e60000 !important;
+}
+
+/* Por defecto visible en escritorio */
+.search-box.desktop-only {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Oculto solo en móviles */
+@media screen and (max-width: 768px) {
+  .search-box.desktop-only {
+    display: none !important;
   }
 }
 

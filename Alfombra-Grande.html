@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto - WALOX Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+
+  <!-- Favicon -->
+  <link rel="icon" type="icons" href="icons/favicon-32x32-WALOX.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+
+    
+
+    /* --- DETALLE DEL PRODUCTO (3 columnas: imagen - info - oferta) --- */
+    .producto-detalle {
+      display: grid;
+      grid-template-columns: 350px 1fr 250px;
+      gap: 30px;
+      max-width: 1000px;
+      margin: 40px auto;
+      align-items: flex-start;
+    }
+
+    .producto-imagen img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .producto-info h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .precio {
+      font-size: 1.5rem;
+      color: #e60000;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #000000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #e64900;
+    }
+
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="icons/Walox-logo.png" alt="WALOX Logo">
+    </a>
+
+    <nav class="nav">
+      <a href="#"><i class="fas fa-thumbs-up"></i> Artículos más vendidos</a>
+      <a href="#">Inicio</a>
+      <a href="#">Productos</a>
+      <a href="#">Ofertas</a>
+      <a href="#">Contacto</a>
+    </nav>
+
+    <!-- Buscador solo escritorio -->
+<div class="search-box desktop-only">
+  <input type="text" placeholder="Buscar productos...">
+  <button class="search-btn">
+    <i class="fas fa-search"></i>
+  </button>
+</div>
+
+
+    <div class="icons">
+
+      <a href="checkout.html" class="cart" aria-label="Carrito">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.2 14l.8-2h9c.7 0 1.4-.4 1.7-1l3.6-6.5A1 1 0 0 0 21.5 3H5.2L4.3 1H1v2h2l3.6 7.6-1.3 2.4C4.5 14.4 5.5 16 7 16h12v-2H7.4c-.1 0-.3-.1-.3-.3v-.1z"/>
+        </svg>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+
+    <!-- Contenedor buscador + hamburguesa + carrito -->
+<div class="search-hamburger">
+  
+  <!-- Buscador -->
+  <div class="search-box mobile-only">
+    <input type="text" id="searchInput" placeholder="Buscar productos...">
+    <button id="searchBtn" class="search-btn" aria-label="Buscar">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor" width="20" height="20">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+      </svg>
+    </button>
+  </div>
+
+<!-- Botón de menú combinado: tres puntos verticales a la izquierda + hamburguesa a la derecha -->
+<a href="menu.html" class="hamburger-combined-btn" aria-label="Menú">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true" focusable="false">
+    <!-- puntos verticales (izquierda) -->
+    <circle cx="6"  cy="7"  r="1.2" />
+    <circle cx="6"  cy="14" r="1.2" />
+    <circle cx="6"  cy="21" r="1.2" />
+    <!-- líneas hamburguesa (derecha) -->
+    <line x1="10" y1="7"  x2="22" y2="7"  stroke-width="2" stroke-linecap="round" />
+    <line x1="10" y1="14" x2="22" y2="14" stroke-width="2" stroke-linecap="round" />
+    <line x1="10" y1="21" x2="22" y2="21" stroke-width="2" stroke-linecap="round" />
+  </svg>
+</a>
+
+<!-- Botón de usuario / inicio de sesión -->
+<div class="user-menu mobile-only">
+  <button class="user-btn" aria-label="Usuario">
+<!-- Icono humano -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24" height="24">
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+    </svg>  </button>
+  
+  <div class="user-dropdown">
+    <a href="iniciar sesion-registrarse.html">Iniciar sesión / Registrarse</a>
+    <!-- Aquí puedes añadir más links para usuarios logueados si quieres -->
+  </div>
+</div>
+
+
+  <!-- Carrito con bordes más redondeados -->
+<button class="cart-btn" aria-label="Carrito" onclick="window.location.href='checkout.html'">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+    fill="none" stroke="currentColor" stroke-width="1.8"
+    stroke-linecap="round" stroke-linejoin="round" width="26" height="26">
+    <path d="M6 6h15l-1.5 9h-12z" />
+    <circle cx="9" cy="20" r="1.5" />
+    <circle cx="18" cy="20" r="1.5" />
+    <path d="M6 6L5 3H2" />
+  </svg>
+</button>
+
+
+</div>
+
+
+
+  </header>
+
+  <!-- Menú de categorías móvil -->
+<div class="category-scroll mobile-only">
+  <a href="todos.html" class="category-item active">Todos</a>
+  <a href="ropa.html" class="category-item">Ropa</a>
+  <a href="electronica.html" class="category-item">Electrónica</a>
+  <a href="hogar.html" class="category-item">Hogar</a>
+  <a href="juguetes.html" class="category-item">Juguetes</a>
+  <a href="deportes.html" class="category-item">Deportes</a>
+  <a href="accesorios.html" class="category-item">Accesorios</a>
+</div>
+
+  <!-- Detalles del producto -->
+  <section class="producto-detalle">
+    <!-- Imagen -->
+    <div class="producto-imagen">
+  <img id="imagenPrincipal" src="img/Alfombra Grande.jpeg" alt="Diseño 1">
+</div>
+
+<div class="miniaturas-scroll">
+  <img src="img/Alfombra Grande2.jpeg" alt="Diseño 2" class="mini" data-src="Alfombra Grande2.jpeg">
+  <img src="img/Alfombra Grande3.jpeg" alt="Diseño 3" class="mini" data-src="Alfombra Grande3.jpeg">
+  <img src="img/Alfombra Grande4.jpeg" alt="Diseño 4" class="mini" data-src="Alfombra Grande4.jpeg">
+  <img src="img/Alfombra Grande5.jpg" alt="Diseño 5" class="mini" data-src="Alfombra Grande5.jpg">
+  <img src="img/Alfombra Grande6.jpeg" alt="Diseño 6" class="mini" data-src="Alfombra Grande6.jpeg">
+  <img src="img/Alfombra Grande7.jpeg" alt="Diseño 7" class="mini" data-src="Alfombra Grande7.jpeg">
+  <img src="img/Alfombra Grande8.jpeg" alt="Diseño 8" class="mini" data-src="Alfombra Grande8.jpeg">
+  <img src="img/Alfombra Grande9.jpeg" alt="Diseño 9" class="mini" data-src="Alfombra Grande9.jpeg">
+  <img src="img/Alfombra Grande10.jpeg" alt="Diseño 10" class="mini" data-src="Alfombra Grande10.jpeg">
+  <img src="img/Alfombra Grande11.jpeg" alt="Diseño 11" class="mini" data-src="Alfombra Grande11.jpeg">
+  <img src="img/Alfombra Grande12.jpeg" alt="Diseño 12" class="mini" data-src="Alfombra Grande12.jpeg">
+  <img src="img/Alfombra Grande13.jpeg" alt="Diseño 13" class="mini" data-src="Alfombra Grande13.jpeg">
+  <img src="img/Alfombra Grande14.jpeg" alt="Diseño 14" class="mini" data-src="Alfombra Grande14.jpeg">
+  <img src="img/Alfombra Grande15.jpeg" alt="Diseño 15" class="mini" data-src="Alfombra Grande15.jpeg">
+  <img src="img/Alfombra Grande16.jpeg" alt="Diseño 16" class="mini" data-src="Alfombra Grande16.jpeg">
+  <img src="img/Alfombra Grande17.jpeg" alt="Diseño 17" class="mini" data-src="Alfombra Grande17.jpeg">
+  <img src="img/Alfombra Grande18.jpeg" alt="Diseño 18" class="mini" data-src="Alfombra Grande18.jpeg">
+
+  <!-- ... hasta alfombra18 -->
+</div>
+
+
+    <!-- Info -->
+    <div class="producto-info">
+      <h1>Alfombra Grande para Sala de 200 m x 2.40 m.</h1>
+      <p class="precio">S/ 119.00</p>
+      <p class="descripcion">
+        Dale estilo y comodidad a tu sala con nuestra alfombra premium. 
+        Material resistente, suave al tacto y fácil de limpiar. 
+        Disponible en varios colores y tamaños.
+      </p>
+      <button class="btn">Agregar al carrito</button>
+    </div>
+
+    </section>
+
+    <!-- Footer con redes sociales -->
+  <footer class="footer">
+    <p>© 2025 WALOX Store | Todos los derechos reservados</p>
+    <div class="socials">
+      <a href="https://www.facebook.com/profile.php?id=61573525617136" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/walox.co/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@Walox-h2l" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@walox.co" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </footer>
+  
+
+<script>
+  const imagenPrincipal = document.getElementById('imagenPrincipal');
+const miniaturas = document.querySelectorAll('.miniaturas-scroll .mini');
+
+miniaturas.forEach(mini => {
+  mini.addEventListener('click', () => {
+    imagenPrincipal.src = mini.src;
+    imagenPrincipal.alt = mini.alt;
+
+    // Destacar la miniatura activa
+    miniaturas.forEach(m => m.classList.remove('active'));
+    mini.classList.add('active');
+  });
+});
+
+</script>
+
+
+
+
+</body>
+
+
+
+</html>
