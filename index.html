@@ -74,7 +74,9 @@
   <a href="#"><i class="fas fa-thumbs-up"></i> Artículos más vendidos</a>
   <a href="#" class="rating"><i class="fas fa-star"></i> 5 estrellas</a>
   <a href="#">Lo nuevo</a>
-  <a href="iniciar sesion-registrarse.html">Registrarse</a>
+  <a href="blog/index.html"></i> Blog</a>
+
+
 
   <!-- Dropdown Categorías -->
   <div class="dropdown-wrapper">
@@ -104,6 +106,7 @@
       </svg>
     </button>
   </div>
+  
 
 <!-- Botón de menú combinado: tres puntos verticales a la izquierda + hamburguesa a la derecha -->
 <a href="menu.html" class="hamburger-combined-btn" aria-label="Menú">
@@ -150,6 +153,27 @@
 </div>
 
     <div class="icons">
+      <div class="login-container">
+  <button id="loginButton">
+    <svg class="user-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z"/>
+    </svg>
+    
+    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M7 10l5 5 5-5z"/>
+    </svg>
+  </button>
+
+ <!-- ====== LOGIN ICON MENU - WALOX ====== -->
+
+
+  <div class="login-menu" id="loginMenu">
+    <a href="iniciar sesion-registrarse.html">Iniciar sesión</a>
+    <a href="iniciar sesion-registrarse.html#registro">Crear cuenta</a>
+    <a href="pedidos.html">Mis pedidos</a>
+  </div>
+</div>
+
 
       <a href="checkout.html" class="cart" aria-label="Carrito">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -615,6 +639,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+</script>
+
+<script>
+  const loginButton = document.getElementById("loginButton");
+  const loginMenu = document.getElementById("loginMenu");
+
+  loginButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    loginMenu.classList.toggle("active");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!loginButton.contains(e.target) && !loginMenu.contains(e.target)) {
+      loginMenu.classList.remove("active");
+    }
+  });
 </script>
 
 </body>

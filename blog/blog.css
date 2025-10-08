@@ -1,0 +1,156 @@
+/* ===========================
+   🌐 Estilos del Blog WALOX
+   Tema: Tecnología e Inteligencia Artificial
+   =========================== */
+
+/* ---------------------------
+   RESET Y CONFIGURACIÓN BASE
+---------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #0a0a0f;
+  color: #e0e0e0;
+  line-height: 1.7;
+  padding-bottom: 4rem;
+}
+
+/* ---------------------------
+   ENCABEZADO
+---------------------------- */
+header {
+  background: linear-gradient(135deg, #0f0f17, #15151f);
+  text-align: center;
+  padding: 3rem 1rem;
+  border-bottom: 2px solid #ff0048;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #ff0048;
+  text-shadow: 0 0 10px rgba(255, 0, 72, 0.5);
+}
+
+header p {
+  color: #aaa;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* ---------------------------
+   NAVEGACIÓN
+---------------------------- */
+nav {
+  margin-top: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #e0e0e0;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff0048;
+  border-bottom: 2px solid #ff0048;
+}
+
+/* ---------------------------
+   SECCIÓN DE POSTS
+---------------------------- */
+.post-list {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+article {
+  background: #14141d;
+  border: 1px solid #2b2b36;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(255, 0, 72, 0.15);
+}
+
+article h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+article a {
+  color: #ff0048;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+article a:hover {
+  color: #ff2f6a;
+}
+
+article p {
+  color: #c4c4c4;
+}
+
+/* ---------------------------
+   PIE DE PÁGINA
+---------------------------- */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #0f0f17;
+  color: #888;
+  font-size: 0.9rem;
+  border-top: 1px solid #222;
+}
+
+/* ---------------------------
+   EFECTOS EXTRA (IA VIBE)
+---------------------------- */
+h1::after {
+  content: '🤖';
+  margin-left: 8px;
+  animation: blink 1.5s infinite alternate;
+}
+
+@keyframes blink {
+  0% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+/* Animación sutil al aparecer los artículos */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+article {
+  animation: fadeInUp 0.7s ease both;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  article {
+    padding: 1.5rem;
+  }
+}

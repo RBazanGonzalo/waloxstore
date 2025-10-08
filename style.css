@@ -1208,3 +1208,102 @@ body {
   }
 }
 
+/* ====== BOTÓN LOGIN - WALOX ====== */
+
+/* Solo visible en escritorio */
+@media (max-width: 991px) {
+  .login-container {
+    display: none !important;
+  }
+}
+
+/* Contenedor general de íconos */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 18px; /* espacio entre íconos */
+  position: relative;
+}
+
+/* Contenedor del login */
+.login-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Botón */
+.login-container button {
+  background: none;
+  border: none;
+  color: #000000;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.login-container button:hover {
+  color: #ff6600; /* tono naranja vibrante */
+}
+
+/* Íconos SVG */
+.user-icon,
+.arrow-icon {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.3s ease;
+}
+
+.login-container button:hover .arrow-icon {
+  transform: rotate(180deg);
+}
+
+/* ====== MENÚ DESPLEGABLE ====== */
+.login-menu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.login-menu.active {
+  display: flex;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.login-menu a {
+  color: #ccc;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.login-menu a:hover {
+  background: #ff6600;
+  color: #fff;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
